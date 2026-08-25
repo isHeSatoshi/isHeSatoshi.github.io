@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="only light" />
+  <title>@isHeSatoshi — AI Systems Generalist · Resume</title>
+  <meta name="description" content="@isHeSatoshi — AI systems generalist. Inference, fine-tuning, distillation, quantization, RAG, agents, evaluation, coding-agent harnesses. Public resume." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..600,0..100,0..1&family=Public+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================================
+         RESUME · @isHeSatoshi — print-optimized, A4
+         ========================================================= */
+    :root {
+      --ink:       #0F1112;
+      --ink-2:     #2A2C2E;
+      --ink-3:     #4A4842;
+      --ink-mute:  #8A8579;
+      --ink-faint: #B5AFA0;
+      --rule:      #C9C2B2;
+      --rule-soft: #DCD6C6;
+      --paper:     #F1ECE0;
+      --paper-2:   #E8E2D2;
+      --paper-3:   #FAF6EA;
+      --signal:    #FF4500;
+      --signal-soft: rgba(255, 69, 0, 0.08);
+
+      --ff-display: 'Fraunces', 'Times New Roman', Georgia, serif;
+      --ff-body:    'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --ff-mono:    'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+    body {
+      margin: 0;
+      font-family: var(--ff-body);
+      font-size: 11px;
+      line-height: 1.5;
+      color: var(--ink);
+      background: var(--paper-3);
+    }
+    ::selection { background: var(--signal); color: var(--paper); }
+
+    .page {
+      max-width: 880px;
+      margin: 24px auto;
+      padding: 36px 44px 32px;
+      background: var(--paper);
+      border: 1px solid var(--rule-soft);
+      box-shadow: 0 2px 0 rgba(15,17,18,0.04), 0 16px 40px rgba(15,17,18,0.08);
+      position: relative;
+    }
+
+    /* ---------- toolbar (screen only) ---------- */
+    .toolbar {
+      max-width: 880px;
+      margin: 24px auto 0;
+      padding: 0 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-family: var(--ff-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+    .toolbar a {
+      color: var(--ink-2);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1px;
+    }
+    .toolbar a:hover { color: var(--signal); border-color: var(--signal); }
+    .toolbar__cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 14px;
+      background: var(--ink);
+      color: var(--paper);
+      border: 1px solid var(--ink);
+      border-radius: 0;
+      font-family: var(--ff-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 160ms ease;
+    }
+    .toolbar__cta:hover { background: var(--signal); border-color: var(--signal); }
+    .toolbar__cta:active { transform: translateY(1px); }
+    .toolbar__cta svg { width: 12px; height: 12px; }
+
+    /* ---------- header ---------- */
+    .hd {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      padding-bottom: 16px;
+      border-bottom: 1.5px solid var(--ink);
+    }
+    .hd__name {
+      font-family: var(--ff-display);
+      font-variation-settings: 'opsz' 144, 'SOFT' 0, 'WONK' 0;
+      font-size: 44px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      font-weight: 400;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+    .hd__role {
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+      margin: 0;
+    }
+    .hd__role em {
+      font-style: normal;
+      color: var(--signal);
+      font-weight: 600;
+      margin: 0 4px;
+    }
+    .hd__contact {
+      font-family: var(--ff-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-3);
+      text-align: right;
+      line-height: 1.7;
+    }
+    .hd__contact a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid transparent; }
+    .hd__contact a:hover { color: var(--signal); border-color: var(--signal); }
+
+    /* Redacted PII — small caps mono, sits in the layout like a stamp */
+    .redact {
+      display: inline-block;
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      background: var(--paper-2);
+      border: 1px dashed var(--rule);
+      padding: 3px 8px;
+    }
+    .hd__name .redact {
+      font-family: var(--ff-display);
+      font-variation-settings: 'opsz' 144, 'SOFT' 0, 'WONK' 0;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      text-transform: none;
+      color: var(--ink-3);
+      background: transparent;
+      border: 0;
+      padding: 0;
+    }
+    .hd__badge {
+      display: inline-block;
+      margin: 10px 0 0;
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--signal);
+      border: 1px solid var(--signal);
+      padding: 3px 8px;
+      background: var(--signal-soft);
+    }
+
+    /* ---------- sections ---------- */
+    section {
+      padding: 16px 0 12px;
+      border-bottom: 1px solid var(--rule-soft);
+      page-break-inside: avoid;
+    }
+    section:last-of-type { border-bottom: 0; }
+    .sec__kicker {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--signal);
+      margin: 0 0 10px;
+    }
+    .sec__kicker::before {
+      content: '———';
+      color: var(--rule);
+      letter-spacing: 0;
+      font-weight: 300;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: baseline;
+      margin: 0 0 4px;
+    }
+    .row__title {
+      font-family: var(--ff-display);
+      font-variation-settings: 'opsz' 50, 'SOFT' 0, 'WONK' 0;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .row__org {
+      font-family: var(--ff-body);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--ink-2);
+      margin: 0 0 4px;
+    }
+    .row__org em {
+      font-family: var(--ff-mono);
+      font-style: normal;
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--signal);
+      margin-right: 8px;
+    }
+    .row__date {
+      font-family: var(--ff-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      white-space: nowrap;
+      text-align: right;
+    }
+    .row__date a { color: var(--signal); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 160ms ease; }
+    .row__date a:hover { border-bottom-color: var(--signal); }
+    .row__gpa {
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: var(--ink-2);
+      margin: 0;
+    }
+
+    ul.bullets {
+      list-style: none;
+      margin: 4px 0 14px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    ul.bullets li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 10.8px;
+      line-height: 1.5;
+      color: var(--ink-2);
+    }
+    ul.bullets li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      top: -1px;
+      color: var(--signal);
+      font-weight: 700;
+    }
+    ul.bullets li strong { color: var(--ink); font-weight: 600; }
+
+    .project__lede {
+      font-size: 10.8px;
+      line-height: 1.55;
+      color: var(--ink-2);
+      margin: 4px 0 8px;
+    }
+
+    /* ---------- skill groups ---------- */
+    .skills {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+    }
+    .skills__group { font-size: 10.8px; line-height: 1.55; color: var(--ink-2); }
+    .skills__k {
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin: 0 0 2px;
+    }
+
+    /* ---------- recognition ---------- */
+    .recog {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+    .recog__line { font-size: 10.8px; line-height: 1.55; color: var(--ink-2); }
+    .recog__line b {
+      font-family: var(--ff-mono);
+      font-weight: 600;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--signal);
+      margin-right: 8px;
+    }
+
+    /* ---------- interests ---------- */
+    .interests {
+      font-size: 10.8px;
+      line-height: 1.55;
+      color: var(--ink-2);
+      margin: 0;
+    }
+
+    /* ---------- paper callout ---------- */
+    .paper {
+      border: 1px solid var(--ink);
+      padding: 10px 14px;
+      margin: 6px 0 10px;
+      background: var(--paper-2);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+    .paper__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      background: var(--signal);
+      color: var(--paper);
+      font-family: var(--ff-mono);
+      font-size: 0.56rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .paper__title {
+      font-family: var(--ff-display);
+      font-variation-settings: 'opsz' 50, 'SOFT' 0, 'WONK' 0;
+      font-size: 12.5px;
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--ink);
+      margin: 0 0 1px;
+    }
+    .paper__cite {
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin: 0;
+    }
+
+    /* ---------- print ---------- */
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm 14mm 12mm;
+      }
+      body { background: white; font-size: 10.5px; }
+      .toolbar, .no-print { display: none !important; }
+      .page {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+        border: 0;
+        box-shadow: none;
+        background: white;
+      }
+      section { padding: 12px 0 8px; page-break-inside: avoid; }
+      .hd__name { font-size: 36px; }
+      ul.bullets li, .project__lede, .recog__line, .skills__group, .interests { font-size: 10px; }
+    }
+
+    @media (max-width: 720px) {
+      .toolbar { flex-direction: column; align-items: stretch; padding: 0 20px; }
+      .toolbar__left { text-align: center; }
+      .page { padding: 24px 20px; margin: 16px 12px; }
+      .hd { grid-template-columns: 1fr; }
+      .hd__contact { text-align: left; }
+      .row { grid-template-columns: 1fr; gap: 2px; }
+      .row__date { text-align: left; }
+      .skills { grid-template-columns: 1fr; }
+      .paper { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar no-print" role="toolbar">
+    <div class="toolbar__left">
+      ← <a href="index.html">back to portfolio</a>
+    </div>
+    <button class="toolbar__cta" id="print-btn" type="button" aria-label="Save resume as PDF">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M4 5V2h8v3M4 11H2v3h12v-3h-2M4 11h8v5H4z" stroke-linecap="square" />
+      </svg>
+      Save as PDF
+    </button>
+  </div>
+
+  <main class="page" role="main">
+
+    <!-- ============== HEADER ============== -->
+    <header class="hd">
+      <div>
+        <h1 class="hd__name">@isHeSatoshi</h1>
+        <p class="hd__role">AI systems generalist <em>·</em> across the whole stack <em>·</em> model to infrastructure</p>
+      </div>
+      <div class="hd__contact">
+        <a href="mailto:nqpznmi6q@mozmail.com">nqpznmi6q@mozmail.com</a><br/>
+        <span class="redact">Phone redacted for privacy</span><br/>
+        Bengaluru, Karnataka, India<br/>
+        <a href="https://github.com/isHeSatoshi" target="_blank" rel="noopener">github.com/isHeSatoshi</a>
+      </div>
+    </header>
+
+    <!-- ============== EDUCATION ============== -->
+    <section aria-labelledby="sec-edu">
+      <h2 class="sec__kicker" id="sec-edu">Education</h2>
+      <div class="row">
+        <div>
+          <p class="row__title">B.E. in Computer Science</p>
+          <p class="row__org">BMS College of Engineering</p>
+        </div>
+        <div>
+          <p class="row__date">2022 &ndash; 2026</p>
+          <p class="row__gpa">GPA · 9.06 / 10</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== EXPERIENCE ============== -->
+    <section aria-labelledby="sec-exp">
+      <h2 class="sec__kicker" id="sec-exp">Experience</h2>
+
+      <div class="row">
+        <div>
+          <p class="row__title">Computer Vision Research Intern</p>
+          <p class="row__org"><em>WeRide</em>Level 4 Autonomous Driving</p>
+        </div>
+        <p class="row__date">Feb 2026 &ndash; Aug 2026</p>
+      </div>
+      <ul class="bullets">
+        <li>Improved the WeRide 3D occupancy model (Vox-Flow) for self-driving cars &mdash; cars in city traffic can now see surrounding geometry more accurately, raising per-scene accuracy over the previous baseline.</li>
+        <li>Rebuilt the model's core using <strong>Minkowski Engine</strong> (3D sparse data library), cutting GPU memory use enough to fit longer video sequences during training on the same hardware.</li>
+        <li>Added custom attention masks so the model stops &ldquo;flickering&rdquo; between predictions of moving objects frame-to-frame — a key noise source for downstream planners.</li>
+        <li>Profiled and fixed a training-stability bug across an <strong>H100 cluster</strong>, unblocking multi-node runs that previously crashed mid-training.</li>
+        <li>Built a shared benchmarking harness with the perception team so every weekly model release is evaluated on the same urban driving scenarios.</li>
+      </ul>
+
+      <div class="row">
+        <div>
+          <p class="row__title">ML Research Intern</p>
+          <p class="row__org"><em>Sony Research India</em>Wearable biomedical sensors</p>
+        </div>
+        <p class="row__date">Aug 2025 &ndash; Dec 2025</p>
+      </div>
+      <ul class="bullets">
+        <li>Built a wearable-sensor model that flags when a person's body switches from aerobic to anaerobic breathing during exercise — useful for athletes and fitness researchers.</li>
+        <li>Designed hand-crafted time-series features (heart-rate variability, sweat-rate trends, motion intensity) to predict <strong>muscle cramps minutes before they happen</strong>.</li>
+        <li>Rebuilt the data pipeline with an automated validation harness so biomedical researchers could iterate on the model without manual preprocessing each round.</li>
+        <li>Wrote plain-English reports and demo notebooks so clinicians and product managers could interpret model behavior without reading the code.</li>
+      </ul>
+
+      <div class="row">
+        <div>
+          <p class="row__title">Software Development Intern</p>
+          <p class="row__org"><em>invideo.io</em>AI support chatbot, RAG over help-center</p>
+        </div>
+        <p class="row__date">Sept 2024 &ndash; Nov 2024</p>
+      </div>
+      <ul class="bullets">
+        <li>Replaced a chunk of invideo's human-handled support tickets with an <strong>AI chatbot</strong> built on OpenAI and LLaMA, grounded on internal help-center articles via a vector search index.</li>
+        <li>Shipped the full Flask + React chatbot with a thumbs-up/down feedback loop that automatically tunes prompts weekly based on real interactions.</li>
+      </ul>
+    </section>
+
+    <!-- ============== PROJECTS ============== -->
+    <section aria-labelledby="sec-proj">
+      <h2 class="sec__kicker" id="sec-proj">Projects</h2>
+
+      <!-- Universal Reducer -->
+      <div class="row">
+        <div>
+          <p class="row__title">Universal Reducer &mdash; A Persistent-Perception Control Law</p>
+          <p class="row__org"><em>Research · open-source</em>Model-agnostic · streaming · tracker-free</p>
+        </div>
+        <p class="row__date">2026</p>
+      </div>
+      <div class="paper" aria-label="Research project">
+        <span class="paper__tag">Research</span>
+        <div>
+          <p class="paper__title">Perceiving Only When the World Changes: A Guaranteed Sampling Law for Model-Agnostic Video Perception</p>
+          <p class="paper__cite">Universal Reducer · 2026</p>
+        </div>
+      </div>
+      <ul class="bullets">
+        <li>A deterministic <strong>state machine</strong> in front of any object detector: idle every 0.4 s, fire on straddle, hot-cap every 0.1 s while a task entity is actively crossing the band midline.</li>
+        <li>Proven <strong>recall guarantee</strong> (Lemmas 1&ndash;3): any midline crossing the detector would see at full rate is reported with bounded timestamp error &le; 0.4 s + 0.5/f<sub>ps</sub>. Property tests pin the boundary cases.</li>
+        <li>Persistent world memory carries <strong>identity and motion across idle gaps</strong> &mdash; no upstream tracker required.</li>
+        <li>On 8 real aerial clips (YOLOv8s @ 640, VisDrone + VIRAT, RTX 4060 Ti): <strong>25&ndash;42% of windows sampled</strong>, up to <strong>78.7% wall-clock reduction</strong>; GT eval covers every midline crossing at a 0.3 s cadence (60/60).</li>
+        <li><strong>Trained-free, model-agnostic, tracker-free</strong> &mdash; a patent and literature search found no prior art teaching the combination.</li>
+        <li>Also covers the broader <strong>Persistent Perception Computing</strong> line of work: contextual & event-aware video AI, task-oriented perception orchestration, evidence & audit workflows, plug-and-play perception backends.</li>
+      </ul>
+
+      <div class="row">
+        <div>
+          <p class="row__title">Grounded Continual Learning (GCL) &amp; OpenContinualEnv</p>
+          <p class="row__org"><em>Research &middot; open-source</em>Execution-grounded lifelong MDP for deployed code LLMs</p>
+        </div>
+        <p class="row__date"><a href="https://github.com/isHeSatoshi/RL-Environment-for-Continual-Learning-at-Scale" target="_blank" rel="noopener">repo &nearr;</a></p>
+      </div>
+      <ul class="bullets">
+        <li>Built <strong>OpenContinualEnv</strong> &mdash; a Gymnasium / HF OpenEnv-standard lifelong MDP (<code>OpenContinualEnv</code>) &mdash; and the <strong>Grounded Continual Learning (GCL)</strong> framework on top of it: frozen code LLM (Qwen2.5-Coder-1.5B, Qwen3.5-2B) answers, a <strong>subprocess-isolated sandbox with AST safety checks</strong> executes &amp; tests, and a real <strong>PEFT LoRA adapter updates through Adam</strong>. A <strong>holdout-veto safety gate</strong> (budget <code>gate_epsilon=0.05</code>) promotes or rolls the model back.</li>
+        <li>Empirical wins from a real run on RTX 4060 Ti 16 GB: <strong>Holdout-Veto prevented 95%+ of catastrophic regressions</strong>; Verification-Self-Reflection-Rehearsal (<strong>VSR</strong>) hyperparameter search hit peak <strong>ACC 0.600</strong> across lifelong distribution shifts; LoRA smoke run shows training loss <strong>0.178 &rarr; 0.001</strong> and max logit shift <strong>30.75</strong>.</li>
+        <li><strong>Anti-contamination</strong>: deterministic train / holdout partition of MBPP &amp; HumanEval by task id and SHA-256 content fingerprint, with a runner that raises on overlap (clean-harness hash <code>4fb7d0fb…</code>). Also: <strong>Skill Vault</strong> (AST-deduped snippet index), contextual-bandit option-policy Mixture-of-Adapters router, and a comprehensive <strong>trajectory experience store</strong> for offline RL / DPO.</li>
+        <li>Five baselines compared head-to-head: <code>Memory</code>, <code>LoRA</code>, <code>Hybrid</code> (Replay + LoRA), <code>JIT-RL</code>, <code>Dynamic MoA</code>. Plus the GCL learners: <code>Frozen</code>, <code>AlwaysLoRA</code>, <code>Replay</code>, <code>EWC</code>, <code>Controller</code>, <code>GRPO</code>. Per-learner tables report ACC, BWT, FWT, forgetting, AUC, stability, updates, rollbacks.</li>
+        <li><strong>106 E2E tests across 4 tiers</strong> (feature coverage, edge / corner cases, cross-feature interactions, real-world lifelong scenarios) plus the unit suite. Single-command re-runner regenerates <code>paper/results.tex</code> from logged artifacts &mdash; the paper does not assert any number that is not produced by this pipeline. <code>Streamlit</code> dashboard + Kaggle deploy script for one-click reproduction.</li>
+      </ul>
+
+      <div class="row">
+        <div>
+          <p class="row__title">Edge-Deployed Voice Assistant &mdash; Custom PCB &times; Custom LLM</p>
+          <p class="row__org"><em>Hardware &times; ML</em>Custom 4-mic XMOS PCB · distributed ESP32 + Pi 5</p>
+        </div>
+        <p class="row__date">Shipped</p>
+      </div>
+      <ul class="bullets">
+        <li>Designed a <strong>custom 4-mic XMOS audio PCB</strong> so the assistant can hear you from across a noisy room (beamforming + on-chip noise suppression).</li>
+        <li>Wired a distributed <strong>ESP32 + Raspberry Pi 5</strong> network for low-latency audio streaming, wake-word detection, and command routing across rooms.</li>
+        <li>Benchmarked 3 versions of a <strong>2B-parameter LLM</strong> (off-the-shelf, fine-tuned, and custom pre-trained) and picked the best latency-vs-quality trade-off on the Pi's CPU.</li>
+        <li>Shipped an end-to-end pipeline (mic → DSP → wake router → LLM intent → action) with a live web dashboard for debugging in real home environments.</li>
+      </ul>
+    </section>
+
+    <!-- ============== SKILLS ============== -->
+    <section aria-labelledby="sec-skl">
+      <h2 class="sec__kicker" id="sec-skl">Skills</h2>
+      <div class="skills">
+        <div class="skills__group">
+          <p class="skills__k">Model layer</p>
+          LLM architecture · open-weight models · fine-tuning (PEFT LoRA) · distillation · quantization (GPTQ · AWQ · GGUF) · inference (vLLM) · multi-node H100 training
+        </div>
+        <div class="skills__group">
+          <p class="skills__k">RAG &amp; Agents</p>
+          Retrieval pipelines (dense + BM25) · RRF fusion · rerankers · LangChain · agentic coding harnesses · tool use · context engineering
+        </div>
+        <div class="skills__group">
+          <p class="skills__k">Evaluation</p>
+          Holdout design · anti-contamination canaries · deterministic harnesses · MMLU / IFEval / HumanEval · property tests · ground-truth signals
+        </div>
+        <div class="skills__group">
+          <p class="skills__k">Stack &amp; Systems</p>
+          PyTorch · Hugging Face · Transformers · CUDA · YOLOv8 · Detectron2 · Minkowski Engine · OpenCV · Raspberry Pi · ESP32 · Arduino · FPGA
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== RECOGNITION ============== -->
+    <section aria-labelledby="sec-rec">
+      <h2 class="sec__kicker" id="sec-rec">Recognition</h2>
+      <div class="recog">
+        <p class="recog__line"><b>Winner</b>IIT Tirupati × BIS RAG Hackathon · Lion Circuits Hardware Hackathon · Kaggle MedGemma · Composio Agents Hackathon</p>
+        <p class="recog__line"><b>Finalist</b>IIT Delhi AI Agents Hackathon (3rd, 2025) · Techfest STEM Olympiad, IIT Bombay (Runner-Up, 2020) · AI Hardware Hackathon 2026</p>
+        <p class="recog__line"><b>Participated</b>GitLab Orbit · IIIT Bangalore Quantum Track · Amazon ML Challenge · AWS Agentic AI · Solana Hacker House</p>
+      </div>
+    </section>
+
+    <!-- ============== APPROACH ============== -->
+    <section aria-labelledby="sec-app">
+      <h2 class="sec__kicker" id="sec-app">Approach</h2>
+      <p class="interests">AI systems generalist. I work across the whole stack — LLM architecture, open-weight models, inference, fine-tuning, distillation, quantization, RAG, agents, evaluation, and coding-agent harnesses. I&rsquo;m always trying new models, comparing architectures, and building the surrounding systems when existing tooling gets in the way. Most interested in the boundary between the model and the systems that make it useful.</p>
+    </section>
+
+  </main>
+
+  <script>
+    // ----- print / save-as-pdf ---------------------------------
+    (function () {
+      'use strict';
+      var btn = document.getElementById('print-btn');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        // Slight delay lets the button's :active state settle before print dialog opens.
+        setTimeout(function () { window.print(); }, 60);
+      });
+    })();
+  </script>
+</body>
+</html>

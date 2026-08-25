@@ -1,0 +1,1138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F2EBDD" />
+  <title>@isHeSatoshi — AI Systems Generalist · Bengaluru</title>
+  <meta name="description" content="@isHeSatoshi — AI systems generalist. Inference, fine-tuning, distillation, quantization, RAG, agents, evaluation, coding-agent harnesses. Open-weight curious. Based in Bengaluru." />
+
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F2EBDD'/><circle cx='16' cy='16' r='9' fill='none' stroke='%2315171A' stroke-width='1.2'/><circle cx='16' cy='16' r='2.4' fill='%230E5E5A'/><line x1='16' y1='2' x2='16' y2='30' stroke='%2315171A' stroke-width='0.5'/><line x1='2' y1='16' x2='30' y2='16' stroke='%2315171A' stroke-width='0.5'/></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,0..100,0..1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="is-loading">
+
+  <!-- ============================================================
+       SKIP LINK
+       ============================================================ -->
+  <a class="skip-link" href="#work">Skip to selected work</a>
+
+  <!-- ============================================================
+       LIVE STATUS PILL · fixed bottom-left, always visible
+       ============================================================ -->
+  <div class="live-pill" aria-label="Live status">
+    <span class="live-pill__dot" aria-hidden="true"></span>
+    <span class="live-pill__txt"><b>07</b>&nbsp;SHIPPED</span>
+    <span class="live-pill__sep" aria-hidden="true">·</span>
+    <span class="live-pill__txt"><b>05</b>&nbsp;HACK WINS</span>
+    <span class="live-pill__sep" aria-hidden="true">·</span>
+    <span class="live-pill__txt">ALWAYS&nbsp;SHIPPING</span>
+  </div>
+
+  <!-- ============================================================
+       TOP NAV
+       ============================================================ -->
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a class="nav__pill" href="#top" aria-label="Back to top">
+        <span class="nav__name">@isHeSatoshi</span>
+        <span class="nav__div" aria-hidden="true"></span>
+        <span class="nav__role">AI systems generalist</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO · multi-card grid on paper
+       ============================================================ -->
+  <section class="page intro" id="top" aria-labelledby="intro-title">
+    <div class="page__shell">
+
+      <div class="kicker" data-reveal>
+        <span>PORTFOLIO / 2026</span>
+        <span class="kicker__dot" aria-hidden="true">·</span>
+        <span>BENGALURU · AVAILABLE REMOTELY</span>
+      </div>
+
+      <div class="hero-grid">
+
+        <!-- 01 / IDENTITY -->
+        <article class="card card--identity" data-reveal>
+          <header class="card__label">
+            <span>01 / PROFILE</span>
+            <span>AI SYSTEMS GENERALIST</span>
+          </header>
+          <div class="identity">
+            <figure class="identity__scene" aria-hidden="true">
+              <!-- Portrait scene · line-art "builder" with AI neural badge -->
+              <svg viewBox="0 0 200 200" class="scene-svg">
+                <defs>
+                  <pattern id="paperDots" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+                    <circle cx="0.6" cy="0.6" r="0.6" fill="#15171A" opacity="0.18"/>
+                  </pattern>
+                </defs>
+                <rect x="0" y="0" width="200" height="200" fill="url(#paperDots)"/>
+                <!-- Frame ticks -->
+                <path d="M8 8 L20 8 M8 8 L8 20" stroke="#15171A" stroke-width="1" fill="none"/>
+                <path d="M192 8 L180 8 M192 8 L192 20" stroke="#15171A" stroke-width="1" fill="none"/>
+                <path d="M8 192 L20 192 M8 192 L8 180" stroke="#15171A" stroke-width="1" fill="none"/>
+                <path d="M192 192 L180 192 M192 192 L192 180" stroke="#15171A" stroke-width="1" fill="none"/>
+                <!-- Figure: shoulders + head outline -->
+                <path d="M55 200 C 55 150, 70 130, 100 130 C 130 130, 145 150, 145 200 Z" fill="none" stroke="#15171A" stroke-width="1.4" stroke-linejoin="round"/>
+                <!-- Head: circle -->
+                <circle cx="100" cy="92" r="32" fill="none" stroke="#15171A" stroke-width="1.4"/>
+                <!-- Neural nodes inside head -->
+                <g stroke="#0E5E5A" stroke-width="1" fill="none">
+                  <circle cx="100" cy="92" r="22" fill="none" stroke-dasharray="2 3" opacity="0.6"/>
+                  <line x1="86" y1="84" x2="100" y2="92"/>
+                  <line x1="100" y1="92" x2="116" y2="84"/>
+                  <line x1="86" y1="100" x2="100" y2="92"/>
+                  <line x1="100" y1="92" x2="116" y2="100"/>
+                  <line x1="86" y1="84" x2="86" y2="100"/>
+                  <line x1="116" y1="84" x2="116" y2="100"/>
+                </g>
+                <g fill="#0E5E5A">
+                  <circle cx="86" cy="84" r="2.2"/>
+                  <circle cx="86" cy="100" r="2.2"/>
+                  <circle cx="116" cy="84" r="2.2"/>
+                  <circle cx="116" cy="100" r="2.2"/>
+                  <circle cx="100" cy="92" r="3"/>
+                </g>
+                <!-- Stamp -->
+                <g transform="translate(150 152) rotate(-6)">
+                  <rect x="-2" y="-12" width="38" height="22" fill="none" stroke="#0E5E5A" stroke-width="1.2"/>
+                  <text x="17" y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.4" fill="#0E5E5A" font-weight="600">@IS / 26</text>
+                </g>
+                <!-- Coordinate -->
+                <text x="14" y="190" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="0.8" fill="#15171A" opacity="0.55">12.97°N · 77.59°E</text>
+              </svg>
+            </figure>
+            <div class="identity__copy">
+              <p class="micro-copy">@ISHESATOSHI / GENERALIST</p>
+              <h1 id="intro-title">
+                <span>I work across the whole AI stack —</span>
+                <span>not one layer, the whole system.</span>
+              </h1>
+            </div>
+          </div>
+          <p class="identity__foot">LLM architecture · inference · RAG · agents · evals · quantization. Bengaluru, IN.</p>
+        </article>
+
+        <!-- 02 / INTRO -->
+        <article class="card card--intro" data-reveal>
+          <header class="card__label">
+            <span>02 / INTRO</span>
+            <span class="card__label-live">
+              <i aria-hidden="true"></i> AVAILABLE
+            </span>
+          </header>
+          <div class="intro__content">
+            <p>I work across the whole stack — LLM architecture, open-weight models, inference, fine-tuning, distillation, quantization, RAG, agents, evaluation, and coding-agent harnesses. I'm always trying new models, comparing architectures, and building the surrounding systems when existing tooling gets in the way.</p>
+            <dl class="intro__meta">
+              <div>
+                <dt>Scope</dt>
+                <dd>Model to infrastructure</dd>
+              </div>
+              <div>
+                <dt>Based</dt>
+                <dd>Bengaluru, IN</dd>
+              </div>
+              <div>
+                <dt>Open to</dt>
+                <dd>Hackathons · hard problems · co-builds</dd>
+              </div>
+            </dl>
+            <a class="btn btn--primary" href="#work">View work <span aria-hidden="true" class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <!-- 03 / FIELD NOTE -->
+        <article class="card card--note" data-reveal>
+          <header class="card__label">
+            <span>FIELD NOTE</span>
+            <span>03</span>
+          </header>
+          <div class="note__body">
+            <strong>04:18</strong>
+            <p>Shipping is the start of the loop, not the end.</p>
+            <a class="text-action" href="#approach">How I work <span aria-hidden="true" class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <!-- 04 / CV -->
+        <article class="card card--cv" data-reveal>
+          <header class="card__label">
+            <span>RESUME</span>
+            <span>04</span>
+          </header>
+          <div class="cv__body">
+            <div class="cv__word">CV</div>
+            <dl class="cv__meta">
+              <div>
+                <dt>Contents</dt>
+                <dd>Experience / Work / Approach</dd>
+              </div>
+              <div>
+                <dt>Edition</dt>
+                <dd>English · 1 page</dd>
+              </div>
+            </dl>
+            <a class="btn btn--quiet" href="resume.html">View resume <span aria-hidden="true" class="arrow">↗</span></a>
+          </div>
+        </article>
+
+        <!-- 05 / CORE CAPABILITIES -->
+        <article class="card card--skills" data-reveal>
+          <header class="card__label">
+            <span>CORE CAPABILITIES</span>
+            <span>04 AREAS</span>
+          </header>
+          <div class="skill-list">
+            <div>
+              <span>01 / Inference</span>
+              <strong>Model serving, quantization (GPTQ · AWQ · GGUF), distillation, vLLM, multi-node H100 training.</strong>
+            </div>
+            <div>
+              <span>02 / Open Models</span>
+              <strong>LLM architecture, open-weight evaluation, PEFT LoRA fine-tuning, Qwen / Llama / Mistral families.</strong>
+            </div>
+            <div>
+              <span>03 / RAG &amp; Agents</span>
+              <strong>Retrieval pipelines, dense + sparse fusion, reranking, agentic coding harnesses, tool use.</strong>
+            </div>
+            <div>
+              <span>04 / Evaluation</span>
+              <strong>Holdout design, anti-contamination canaries, deterministic benchmarks, ground-truth signals.</strong>
+            </div>
+          </div>
+        </article>
+
+        <!-- 06 / PROJECT PREVIEW -->
+        <article class="card card--preview" data-reveal>
+          <header class="card__label">
+            <span>PROJECT PREVIEW / 01</span>
+            <span>RESEARCH</span>
+          </header>
+          <div class="preview__visual" aria-hidden="true">
+            <!-- Universal Reducer · idle → fire → hot state machine -->
+            <svg viewBox="0 0 360 180" class="scene-svg scene-svg--inline">
+              <defs>
+                <pattern id="gridUR" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#15171A" stroke-width="0.3" opacity="0.18"/>
+                </pattern>
+                <marker id="arr-ur" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#15171A"/>
+                </marker>
+                <marker id="arr-ur-hot" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#0E5E5A"/>
+                </marker>
+              </defs>
+              <rect x="0" y="0" width="360" height="180" fill="url(#gridUR)"/>
+              <!-- IDLE -->
+              <g transform="translate(60 90)">
+                <circle r="22" fill="none" stroke="#15171A" stroke-width="1.2"/>
+                <circle r="4" fill="#15171A"/>
+                <text y="-34" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.4" fill="#15171A">IDLE</text>
+                <text y="44" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="0.8" fill="#15171A" opacity="0.6">0.4s</text>
+              </g>
+              <line x1="86" y1="90" x2="124" y2="90" stroke="#15171A" stroke-width="0.8" marker-end="url(#arr-ur)"/>
+              <!-- FIRE -->
+              <g transform="translate(155 90)">
+                <rect x="-30" y="-14" width="60" height="28" fill="none" stroke="#15171A" stroke-width="1.2"/>
+                <text y="4" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.4" fill="#15171A">FIRE</text>
+              </g>
+              <line x1="189" y1="90" x2="224" y2="90" stroke="#15171A" stroke-width="0.8" marker-end="url(#arr-ur)"/>
+              <!-- HOT -->
+              <g transform="translate(255 90)">
+                <circle r="22" fill="none" stroke="#0E5E5A" stroke-width="1.6"/>
+                <circle r="4" fill="#0E5E5A"/>
+                <text y="-34" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.4" fill="#0E5E5A">HOT</text>
+                <text y="44" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="0.8" fill="#0E5E5A" opacity="0.7">0.1s</text>
+              </g>
+              <line x1="281" y1="90" x2="316" y2="90" stroke="#0E5E5A" stroke-width="1.4" marker-end="url(#arr-ur-hot)"/>
+              <!-- EVENT -->
+              <g transform="translate(335 90)">
+                <rect x="-15" y="-12" width="30" height="24" fill="none" stroke="#0E5E5A" stroke-width="1.4"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1" fill="#0E5E5A">EV</text>
+              </g>
+              <!-- Axis label -->
+              <text x="20" y="170" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#15171A" opacity="0.55">FIG. 01 — STATE MACHINE</text>
+            </svg>
+          </div>
+          <div class="preview__note">
+            <span class="micro-copy">PERSISTENT PERCEPTION</span>
+            <p>Universal Reducer cuts wall-clock by <b>78.7%</b> with a proven recall guarantee.</p>
+          </div>
+          <div class="preview__bottom">
+            <div>
+              <span class="micro-copy">COMPUTER VISION · TRACKER-FREE</span>
+              <strong>Universal Reducer</strong>
+            </div>
+            <a class="preview__link" href="#work">View project <span aria-hidden="true" class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <!-- 07 / INDEX -->
+        <article class="card card--index" data-reveal>
+          <header class="card__label">
+            <span>INDEX</span>
+            <span>05</span>
+          </header>
+          <a class="index__link" href="#work">
+            <span>Selected work</span>
+            <small>01</small>
+          </a>
+          <a class="index__link" href="#approach">
+            <span>Approach</span>
+            <small>02</small>
+          </a>
+          <a class="index__link" href="#contact">
+            <span>Start a conversation</span>
+            <small>03</small>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SELECTED WORK
+       ============================================================ -->
+  <section class="page work" id="work" aria-labelledby="work-title">
+    <div class="page__shell">
+
+      <div class="kicker" data-reveal>
+        <span>SELECTED WORK / 2024—2026</span>
+        <span class="kicker__dot" aria-hidden="true">·</span>
+        <span>06 SYSTEMS · INFERENCE · RAG · VISION · HARDWARE</span>
+      </div>
+
+      <header class="section-heading" data-reveal>
+        <h2 class="section-title" id="work-title">Selected work</h2>
+        <p class="section-sub">Systems where the model, the harness, and the infrastructure all had to be in the same room. Built on weekends and curiosity.</p>
+      </header>
+
+      <!-- 01 UNIVERSAL REDUCER -->
+      <article class="project-row" data-reveal>
+        <div class="project-info">
+          <div class="project-info__main">
+            <p class="project-index">01 / COMPUTER VISION</p>
+            <h3 class="project-name">Universal Reducer</h3>
+            <p class="project-type">A persistent-perception control law. Sampling law for model-agnostic video perception.</p>
+          </div>
+          <dl class="project-facts">
+            <div><dt>Moment</dt><dd>Persistent surveillance at scale</dd></div>
+            <div><dt>Inputs</dt><dd>Video stream · detector (any)</dd></div>
+            <div><dt>Design focus</dt><dd>A proven recall guarantee</dd></div>
+            <div><dt>Deliverables</dt><dd>Open-source sampler · property tests</dd></div>
+          </dl>
+          <div class="project-footer">
+            <div class="project-meta">
+              <span>2026</span>
+              <span>Computer vision · control law</span>
+            </div>
+            <a class="case-link" href="https://github.com/isHeSatoshi" target="_blank" rel="noopener">Source <span aria-hidden="true" class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="project-visual" aria-hidden="true">
+          <div class="project-visual__head">
+            <span>01 / UNIVERSAL REDUCER</span>
+            <span>STATE MACHINE</span>
+          </div>
+          <div class="project-visual__stage">
+            <svg viewBox="0 0 360 200" class="scene-svg scene-svg--inline">
+              <defs>
+                <pattern id="ur-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#15171A" stroke-width="0.3" opacity="0.18"/>
+                </pattern>
+                <marker id="ur-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#15171A"/>
+                </marker>
+                <marker id="ur-arr-h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#0E5E5A"/>
+                </marker>
+              </defs>
+              <rect x="0" y="0" width="360" height="200" fill="url(#ur-grid)"/>
+              <!-- Sample line graph background -->
+              <path d="M 20 130 L 50 110 L 80 140 L 110 100 L 140 130 L 170 105 L 200 135 L 230 110 L 260 140 L 290 100 L 320 125 L 340 115" fill="none" stroke="#15171A" stroke-width="0.6" stroke-dasharray="2 4" opacity="0.5"/>
+              <!-- IDLE -->
+              <g transform="translate(60 100)">
+                <circle r="22" fill="#F2EBDD" stroke="#15171A" stroke-width="1.4"/>
+                <circle r="4" fill="#15171A"/>
+                <text y="-32" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.4" fill="#15171A">IDLE</text>
+                <text y="38" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="0.8" fill="#15171A" opacity="0.6">0.4s</text>
+              </g>
+              <line x1="86" y1="100" x2="124" y2="100" stroke="#15171A" stroke-width="0.8" marker-end="url(#ur-arr)"/>
+              <!-- FIRE -->
+              <g transform="translate(160 100)">
+                <rect x="-30" y="-14" width="60" height="28" fill="#F2EBDD" stroke="#15171A" stroke-width="1.4"/>
+                <text y="4" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.4" fill="#15171A">FIRE</text>
+              </g>
+              <line x1="194" y1="100" x2="232" y2="100" stroke="#0E5E5A" stroke-width="1.2" marker-end="url(#ur-arr-h)"/>
+              <!-- HOT -->
+              <g transform="translate(270 100)">
+                <circle r="24" fill="#F2EBDD" stroke="#0E5E5A" stroke-width="1.8"/>
+                <circle r="5" fill="#0E5E5A"/>
+                <text y="-34" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.4" fill="#0E5E5A">HOT</text>
+                <text y="40" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="0.8" fill="#0E5E5A" opacity="0.7">0.1s</text>
+              </g>
+              <line x1="298" y1="100" x2="332" y2="100" stroke="#0E5E5A" stroke-width="1.4" marker-end="url(#ur-arr-h)"/>
+              <!-- EVENT -->
+              <g transform="translate(345 100)">
+                <rect x="-12" y="-10" width="24" height="20" fill="#0E5E5A"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1" fill="#F2EBDD">EV</text>
+              </g>
+              <!-- bottom labels -->
+              <text x="20" y="180" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#15171A" opacity="0.55">FIG. 01 — IDLE → FIRE → HOT</text>
+              <text x="340" y="180" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#0E5E5A" opacity="0.8">−78.7% WALL CLOCK</text>
+            </svg>
+          </div>
+          <div class="project-visual__foot">
+            <span>YOLOv8s · VisDrone · VIRAT</span>
+            <span>60 / 60 GT crossings</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 GCL -->
+      <article class="project-row" data-reveal>
+        <div class="project-info">
+          <div class="project-info__main">
+            <p class="project-index">02 / GROUNDED LEARNING</p>
+            <h3 class="project-name">GCL &amp; OpenContinualEnv</h3>
+            <p class="project-type">Execution-grounded lifelong MDP. Deployed code LLMs that improve from real feedback.</p>
+          </div>
+          <dl class="project-facts">
+            <div><dt>Moment</dt><dd>After shipping a model</dd></div>
+            <div><dt>Inputs</dt><dd>Frozen LLM · sandbox · real signal</dd></div>
+            <div><dt>Design focus</dt><dd>A holdout-veto safety gate</dd></div>
+            <div><dt>Deliverables</dt><dd>Framework · dashboard · benchmark suite</dd></div>
+          </dl>
+          <div class="project-footer">
+            <div class="project-meta">
+              <span>2026</span>
+              <span>Continual learning · safety</span>
+            </div>
+            <a class="case-link" href="https://github.com/isHeSatoshi/RL-Environment-for-Continual-Learning-at-Scale" target="_blank" rel="noopener">View repository <span aria-hidden="true" class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="project-visual" aria-hidden="true">
+          <div class="project-visual__head">
+            <span>02 / GCL</span>
+            <span>PIPELINE</span>
+          </div>
+          <div class="project-visual__stage">
+            <svg viewBox="0 0 360 200" class="scene-svg scene-svg--inline">
+              <defs>
+                <pattern id="gcl-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#15171A" stroke-width="0.3" opacity="0.18"/>
+                </pattern>
+                <marker id="gcl-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#15171A"/>
+                </marker>
+                <marker id="gcl-arr-h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#0E5E5A"/>
+                </marker>
+              </defs>
+              <rect x="0" y="0" width="360" height="200" fill="url(#gcl-grid)"/>
+              <!-- prompt -->
+              <g transform="translate(40 60)">
+                <rect x="-26" y="-12" width="52" height="24" fill="none" stroke="#15171A" stroke-width="1"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">PROMPT</text>
+              </g>
+              <line x1="66" y1="60" x2="92" y2="60" stroke="#15171A" stroke-width="0.8" marker-end="url(#gcl-arr)"/>
+              <!-- LLM -->
+              <g transform="translate(125 60)">
+                <rect x="-26" y="-12" width="52" height="24" fill="none" stroke="#15171A" stroke-width="1.2"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">LLM</text>
+                <text y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="1" fill="#15171A" opacity="0.6">Qwen2.5 1.5B</text>
+              </g>
+              <line x1="152" y1="60" x2="178" y2="60" stroke="#15171A" stroke-width="0.8" marker-end="url(#gcl-arr)"/>
+              <!-- sandbox -->
+              <g transform="translate(210 60)">
+                <rect x="-26" y="-12" width="52" height="24" fill="none" stroke="#15171A" stroke-width="1"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">SANDBOX</text>
+                <text y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="1" fill="#15171A" opacity="0.6">AST + subprocess</text>
+              </g>
+              <line x1="237" y1="60" x2="262" y2="60" stroke="#0E5E5A" stroke-width="1.2" marker-end="url(#gcl-arr-h)"/>
+              <!-- gate -->
+              <g transform="translate(295 60)">
+                <rect x="-26" y="-12" width="52" height="24" fill="none" stroke="#0E5E5A" stroke-width="1.4"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#0E5E5A">GATE</text>
+                <text y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="1" fill="#0E5E5A" opacity="0.7">ε=0.05</text>
+              </g>
+              <!-- loop back arrow -->
+              <path d="M 295 100 C 295 150, 210 150, 210 84" fill="none" stroke="#0E5E5A" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#gcl-arr-h)"/>
+              <text x="252" y="148" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="1" fill="#0E5E5A" opacity="0.8">PROMOTE / ROLLBACK</text>
+              <!-- LoRA node -->
+              <g transform="translate(125 100)">
+                <rect x="-26" y="-12" width="52" height="24" fill="none" stroke="#15171A" stroke-width="0.8" stroke-dasharray="2 2"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A" opacity="0.7">LoRA · ADAM</text>
+              </g>
+              <text x="20" y="180" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#15171A" opacity="0.55">FIG. 02 — GCL LOOP</text>
+              <text x="340" y="180" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#0E5E5A" opacity="0.8">ACC 0.600 · 95% GATED</text>
+            </svg>
+          </div>
+          <div class="project-visual__foot">
+            <span>5 baselines · 6 learners · 106 E2E tests</span>
+            <span>MBPP / HumanEval</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 EDGE VOICE -->
+      <article class="project-row" data-reveal>
+        <div class="project-info">
+          <div class="project-info__main">
+            <p class="project-index">03 / HARDWARE × ML — SHIPPED</p>
+            <h3 class="project-name">Edge Voice Assistant</h3>
+            <p class="project-type">Custom 4-mic XMOS PCB. Distributed ESP32 + Pi 5 mesh. 2B-parameter local LLM.</p>
+          </div>
+          <dl class="project-facts">
+            <div><dt>Moment</dt><dd>Speaking across a noisy room</dd></div>
+            <div><dt>Inputs</dt><dd>4-mic array · beamforming · wake-word</dd></div>
+            <div><dt>Design focus</dt><dd>End-to-end latency under 0.6s</dd></div>
+            <div><dt>Deliverables</dt><dd>Custom PCB · firmware · live dashboard</dd></div>
+          </dl>
+          <div class="project-footer">
+            <div class="project-meta">
+              <span>2025</span>
+              <span>Embedded ML · audio</span>
+            </div>
+            <span class="case-link case-link--static">Internal · real homes</span>
+          </div>
+        </div>
+        <div class="project-visual" aria-hidden="true">
+          <div class="project-visual__head">
+            <span>03 / EDGE VOICE</span>
+            <span>MESH</span>
+          </div>
+          <div class="project-visual__stage">
+            <svg viewBox="0 0 360 200" class="scene-svg scene-svg--inline">
+              <defs>
+                <pattern id="ev-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#15171A" stroke-width="0.3" opacity="0.18"/>
+                </pattern>
+                <marker id="ev-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#15171A"/>
+                </marker>
+                <marker id="ev-arr-h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#0E5E5A"/>
+                </marker>
+              </defs>
+              <rect x="0" y="0" width="360" height="200" fill="url(#ev-grid)"/>
+              <!-- 4 mics -->
+              <g transform="translate(36 50)">
+                <circle r="3" fill="#15171A"/>
+                <circle r="3" cy="22" fill="#15171A"/>
+                <circle r="3" cy="44" fill="#15171A"/>
+                <circle r="3" cy="66" fill="#15171A"/>
+                <text x="20" y="100" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1" fill="#15171A">MIC×4</text>
+              </g>
+              <line x1="48" y1="50" x2="80" y2="80" stroke="#15171A" stroke-width="0.6"/>
+              <line x1="48" y1="72" x2="80" y2="82" stroke="#15171A" stroke-width="0.6"/>
+              <line x1="48" y1="94" x2="80" y2="84" stroke="#15171A" stroke-width="0.6"/>
+              <line x1="48" y1="116" x2="80" y2="86" stroke="#15171A" stroke-width="0.6"/>
+              <line x1="100" y1="80" x2="124" y2="80" stroke="#15171A" stroke-width="0.8" marker-end="url(#ev-arr)"/>
+              <!-- XMOS -->
+              <g transform="translate(155 80)">
+                <rect x="-26" y="-14" width="52" height="28" fill="none" stroke="#15171A" stroke-width="1.2"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#15171A">XMOS</text>
+                <text y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">DSP · 12ms</text>
+              </g>
+              <line x1="182" y1="80" x2="206" y2="80" stroke="#15171A" stroke-width="0.8" marker-end="url(#ev-arr)"/>
+              <!-- ESP32 -->
+              <g transform="translate(235 80)">
+                <rect x="-26" y="-14" width="52" height="28" fill="none" stroke="#15171A" stroke-width="1.2"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#15171A">ESP32</text>
+                <text y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">wake · route</text>
+              </g>
+              <line x1="262" y1="80" x2="288" y2="80" stroke="#0E5E5A" stroke-width="1.2" marker-end="url(#ev-arr-h)"/>
+              <!-- Pi 5 -->
+              <g transform="translate(315 80)">
+                <rect x="-26" y="-14" width="52" height="28" fill="none" stroke="#0E5E5A" stroke-width="1.4"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#0E5E5A">PI 5</text>
+                <text y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#0E5E5A" opacity="0.7">2B · local</text>
+              </g>
+              <!-- beamform cones -->
+              <path d="M 36 60 Q 6 50 6 30" fill="none" stroke="#15171A" stroke-width="0.5" opacity="0.5"/>
+              <path d="M 36 80 Q 0 80 0 80" fill="none" stroke="#15171A" stroke-width="0.5" opacity="0.5"/>
+              <path d="M 36 100 Q 6 110 6 130" fill="none" stroke="#15171A" stroke-width="0.5" opacity="0.5"/>
+              <text x="20" y="180" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#15171A" opacity="0.55">FIG. 03 — AUDIO MESH</text>
+              <text x="340" y="180" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#0E5E5A" opacity="0.8">0.6s END-TO-END</text>
+            </svg>
+          </div>
+          <div class="project-visual__foot">
+            <span>Custom 4-layer PCB</span>
+            <span>Live web dashboard</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04 AEROSENSE -->
+      <article class="project-row" data-reveal>
+        <div class="project-info">
+          <div class="project-info__main">
+            <p class="project-index">04 / ARDUINO HACKATHON — WIN</p>
+            <h3 class="project-name">AeroSense AI</h3>
+            <p class="project-type">Vision-driven HVAC. YOLOv8n + Arduino for auditorium occupancy-aware air conditioning.</p>
+          </div>
+          <dl class="project-facts">
+            <div><dt>Moment</dt><dd>Empty rooms still cooling</dd></div>
+            <div><dt>Inputs</dt><dd>Camera · occupancy · time-of-day</dd></div>
+            <div><dt>Design focus</dt><dd>Hysteresis-protected state machine</dd></div>
+            <div><dt>Deliverables</dt><dd>Detection pipeline · AC controller · dashboard</dd></div>
+          </dl>
+          <div class="project-footer">
+            <div class="project-meta">
+              <span>2024</span>
+              <span>Edge · hardware</span>
+            </div>
+            <a class="case-link" href="https://github.com/isHeSatoshi/ard18" target="_blank" rel="noopener">View repository <span aria-hidden="true" class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="project-visual" aria-hidden="true">
+          <div class="project-visual__head">
+            <span>04 / AEROSENSE</span>
+            <span>CONTROL LOOP</span>
+          </div>
+          <div class="project-visual__stage">
+            <svg viewBox="0 0 360 200" class="scene-svg scene-svg--inline">
+              <defs>
+                <pattern id="ae-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#15171A" stroke-width="0.3" opacity="0.18"/>
+                </pattern>
+                <marker id="ae-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#15171A"/>
+                </marker>
+                <marker id="ae-arr-h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#0E5E5A"/>
+                </marker>
+              </defs>
+              <rect x="0" y="0" width="360" height="200" fill="url(#ae-grid)"/>
+              <!-- room -->
+              <g transform="translate(60 90)">
+                <rect x="-30" y="-22" width="60" height="44" fill="none" stroke="#15171A" stroke-width="0.8" stroke-dasharray="2 3"/>
+                <circle r="3" cy="-8" fill="#15171A"/>
+                <circle r="3" cy="2" fill="#15171A"/>
+                <circle r="3" cy="12" fill="#15171A"/>
+                <text y="-32" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1" fill="#15171A">ROOM</text>
+                <text x="50" y="0" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">6 states</text>
+              </g>
+              <line x1="92" y1="90" x2="116" y2="90" stroke="#15171A" stroke-width="0.8" marker-end="url(#ae-arr)"/>
+              <!-- YOLO -->
+              <g transform="translate(150 90)">
+                <rect x="-26" y="-12" width="52" height="24" fill="none" stroke="#15171A" stroke-width="1.2"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">YOLOv8n</text>
+                <text y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">ONNX</text>
+              </g>
+              <line x1="178" y1="90" x2="202" y2="90" stroke="#15171A" stroke-width="0.8" marker-end="url(#ae-arr)"/>
+              <!-- decide -->
+              <g transform="translate(235 90)">
+                <rect x="-26" y="-12" width="52" height="24" fill="none" stroke="#15171A" stroke-width="1.2"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">DECIDE</text>
+                <text y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">hysteresis</text>
+              </g>
+              <line x1="263" y1="90" x2="290" y2="90" stroke="#0E5E5A" stroke-width="1.2" marker-end="url(#ae-arr-h)"/>
+              <!-- arduino -->
+              <g transform="translate(320 90)">
+                <rect x="-26" y="-12" width="52" height="24" fill="none" stroke="#0E5E5A" stroke-width="1.4"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#0E5E5A">ARDUINO</text>
+                <text y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#0E5E5A" opacity="0.7">IR · relay</text>
+              </g>
+              <text x="20" y="180" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#15171A" opacity="0.55">FIG. 04 — VISION HVAC</text>
+              <text x="340" y="180" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#0E5E5A" opacity="0.8">2 AC ZONES</text>
+            </svg>
+          </div>
+          <div class="project-visual__foot">
+            <span>FastAPI · WebSocket telemetry</span>
+            <span>YOLOv8n + Arduino Uno</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 05 BIS RAG -->
+      <article class="project-row" data-reveal>
+        <div class="project-info">
+          <div class="project-info__main">
+            <p class="project-index">05 / RAG HACKATHON — WINNER</p>
+            <h3 class="project-name">BIS Standards Discovery</h3>
+            <p class="project-type">RAG over Indian BIS construction standards. BGE-M3 + BM25 + RRF + deterministic rerank.</p>
+          </div>
+          <dl class="project-facts">
+            <div><dt>Moment</dt><dd>Looking up the right IS code</dd></div>
+            <div><dt>Inputs</dt><dd>Natural-language query · IS corpus</dd></div>
+            <div><dt>Design focus</dt><dd>Deterministic ranking (MRR@5 = 0.939)</dd></div>
+            <div><dt>Deliverables</dt><dd>Pipeline · reranker · API</dd></div>
+          </dl>
+          <div class="project-footer">
+            <div class="project-meta">
+              <span>2024</span>
+              <span>RAG · retrieval</span>
+            </div>
+            <a class="case-link" href="https://github.com/isHeSatoshi/bis_rag" target="_blank" rel="noopener">View repository <span aria-hidden="true" class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="project-visual" aria-hidden="true">
+          <div class="project-visual__head">
+            <span>05 / BIS RAG</span>
+            <span>FUSION</span>
+          </div>
+          <div class="project-visual__stage">
+            <svg viewBox="0 0 360 200" class="scene-svg scene-svg--inline">
+              <defs>
+                <pattern id="bis-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#15171A" stroke-width="0.3" opacity="0.18"/>
+                </pattern>
+                <marker id="bis-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#15171A"/>
+                </marker>
+                <marker id="bis-arr-h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#0E5E5A"/>
+                </marker>
+              </defs>
+              <rect x="0" y="0" width="360" height="200" fill="url(#bis-grid)"/>
+              <!-- query -->
+              <g transform="translate(50 50)">
+                <text y="0" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">QUERY</text>
+                <line x1="0" y1="6" x2="0" y2="22" stroke="#15171A" stroke-width="0.8"/>
+              </g>
+              <line x1="50" y1="74" x2="50" y2="92" stroke="#15171A" stroke-width="0.8"/>
+              <line x1="50" y1="74" x2="50" y2="118" stroke="#15171A" stroke-width="0.8"/>
+              <!-- dense -->
+              <g transform="translate(50 100)">
+                <rect x="-26" y="-10" width="52" height="20" fill="none" stroke="#15171A" stroke-width="1"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#15171A">DENSE</text>
+              </g>
+              <!-- BM25 -->
+              <g transform="translate(50 130)">
+                <rect x="-26" y="-10" width="52" height="20" fill="none" stroke="#15171A" stroke-width="1"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#15171A">BM25</text>
+              </g>
+              <line x1="76" y1="100" x2="120" y2="100" stroke="#15171A" stroke-width="0.8" marker-end="url(#bis-arr)"/>
+              <line x1="76" y1="130" x2="120" y2="100" stroke="#15171A" stroke-width="0.8" marker-end="url(#bis-arr)"/>
+              <!-- RRF -->
+              <g transform="translate(150 100)">
+                <rect x="-26" y="-10" width="52" height="20" fill="none" stroke="#15171A" stroke-width="1.2"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#15171A">RRF</text>
+              </g>
+              <line x1="178" y1="100" x2="206" y2="84" stroke="#15171A" stroke-width="0.8" marker-end="url(#bis-arr)"/>
+              <line x1="178" y1="100" x2="206" y2="116" stroke="#15171A" stroke-width="0.8" marker-end="url(#bis-arr)"/>
+              <!-- rerank -->
+              <g transform="translate(240 84)">
+                <rect x="-32" y="-10" width="64" height="20" fill="none" stroke="#0E5E5A" stroke-width="1.4"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#0E5E5A">RERANK</text>
+              </g>
+              <g transform="translate(240 116)">
+                <rect x="-32" y="-10" width="64" height="20" fill="none" stroke="#15171A" stroke-width="1"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#15171A">FAMILY</text>
+              </g>
+              <line x1="275" y1="84" x2="300" y2="100" stroke="#0E5E5A" stroke-width="1.2" marker-end="url(#bis-arr-h)"/>
+              <line x1="275" y1="116" x2="300" y2="100" stroke="#0E5E5A" stroke-width="1.2" marker-end="url(#bis-arr-h)"/>
+              <!-- IS code -->
+              <g transform="translate(325 100)">
+                <rect x="-20" y="-16" width="40" height="32" fill="#0E5E5A"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#F2EBDD">IS</text>
+              </g>
+              <text x="20" y="180" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#15171A" opacity="0.55">FIG. 05 — DENSE + SPARSE FUSION</text>
+              <text x="340" y="180" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#0E5E5A" opacity="0.8">MRR@5 = 0.939</text>
+            </svg>
+          </div>
+          <div class="project-visual__foot">
+            <span>IIT Tirupati × BIS Hackathon</span>
+            <span>1.11s latency · 98% Hit@3</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 06 GETTING OVER IT -->
+      <article class="project-row" data-reveal>
+        <div class="project-info">
+          <div class="project-info__main">
+            <p class="project-index">06 / IN PROGRESS</p>
+            <h3 class="project-name">Getting Over It via ML</h3>
+            <p class="project-type">Headless physics bridge. Node.js Scratch-VM + Gymnasium PPO.</p>
+          </div>
+          <dl class="project-facts">
+            <div><dt>Moment</dt><dd>4,500+ steps per second</dd></div>
+            <div><dt>Inputs</dt><dd>Scratch runtime · virtual clock · game state</dd></div>
+            <div><dt>Design focus</dt><dd>Bypassing browser-throttled physics</dd></div>
+            <div><dt>Deliverables</dt><dd>Gymnasium env · PPO · run logs</dd></div>
+          </dl>
+          <div class="project-footer">
+            <div class="project-meta">
+              <span>2026</span>
+              <span>RL · game bridge</span>
+            </div>
+            <a class="case-link" href="https://github.com/isHeSatoshi/Getting-Over-It-ML" target="_blank" rel="noopener">View repository <span aria-hidden="true" class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="project-visual" aria-hidden="true">
+          <div class="project-visual__head">
+            <span>06 / GOI · ML</span>
+            <span>PHYSICS BRIDGE</span>
+          </div>
+          <div class="project-visual__stage">
+            <svg viewBox="0 0 360 200" class="scene-svg scene-svg--inline">
+              <defs>
+                <pattern id="goi-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#15171A" stroke-width="0.3" opacity="0.18"/>
+                </pattern>
+                <marker id="goi-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#15171A"/>
+                </marker>
+                <marker id="goi-arr-h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#0E5E5A"/>
+                </marker>
+              </defs>
+              <rect x="0" y="0" width="360" height="200" fill="url(#goi-grid)"/>
+              <g transform="translate(50 90)">
+                <rect x="-26" y="-12" width="52" height="24" fill="none" stroke="#15171A" stroke-width="1.2"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">SCRATCH</text>
+              </g>
+              <line x1="78" y1="90" x2="104" y2="90" stroke="#15171A" stroke-width="0.8" marker-end="url(#goi-arr)"/>
+              <g transform="translate(135 90)">
+                <rect x="-26" y="-12" width="52" height="24" fill="none" stroke="#15171A" stroke-width="1.2"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">NODE</text>
+                <text y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">VM headless</text>
+              </g>
+              <line x1="163" y1="90" x2="188" y2="90" stroke="#15171A" stroke-width="0.8" marker-end="url(#goi-arr)"/>
+              <g transform="translate(220 90)">
+                <rect x="-26" y="-12" width="52" height="24" fill="none" stroke="#15171A" stroke-width="1.2"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">GYM</text>
+                <text y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">200-dim</text>
+              </g>
+              <line x1="248" y1="90" x2="276" y2="90" stroke="#0E5E5A" stroke-width="1.2" marker-end="url(#goi-arr-h)"/>
+              <g transform="translate(310 90)">
+                <rect x="-30" y="-12" width="60" height="24" fill="none" stroke="#0E5E5A" stroke-width="1.4" stroke-dasharray="3 3"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#0E5E5A">PPO</text>
+              </g>
+              <!-- clock annotation -->
+              <g transform="translate(50 130)">
+                <line x1="0" y1="0" x2="30" y2="0" stroke="#15171A" stroke-width="0.6"/>
+                <text x="0" y="14" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">33ms / step</text>
+              </g>
+              <g transform="translate(135 130)">
+                <line x1="0" y1="0" x2="30" y2="0" stroke="#15171A" stroke-width="0.6"/>
+                <text x="0" y="14" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">virtual clock</text>
+              </g>
+              <text x="20" y="180" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#15171A" opacity="0.55">FIG. 06 — RL BRIDGE</text>
+              <text x="340" y="180" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#0E5E5A" opacity="0.8">4,500+ STEPS / S</text>
+            </svg>
+          </div>
+          <div class="project-visual__foot">
+            <span>Stable-Baselines3</span>
+            <span>27 game targets</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- All-work bridge card -->
+      <a class="all-work-card" href="#contact" data-reveal>
+        <div class="work-bridge__copy">
+          <span class="micro-copy">COLLABORATION SCOPE / 01—06</span>
+          <strong>Building the systems<br/>around the model,<br/>not just the model. <span aria-hidden="true" class="arrow">→</span></strong>
+          <p>If your project touches the boundary between a model and the tooling around it — inference, retrieval, eval, harness — this is a good place to begin.</p>
+        </div>
+        <div class="work-bridge__art" aria-hidden="true">
+          <svg viewBox="0 0 360 220" class="scene-svg">
+            <defs>
+              <pattern id="br-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#F2EBDD" stroke-width="0.3" opacity="0.18"/>
+              </pattern>
+            </defs>
+            <rect x="0" y="0" width="360" height="220" fill="url(#br-grid)"/>
+            <!-- left question nodes -->
+            <g stroke="#F2EBDD" stroke-width="0.8" fill="none" opacity="0.85">
+              <circle cx="50" cy="50" r="6"/>
+              <circle cx="80" cy="100" r="4"/>
+              <circle cx="40" cy="140" r="5"/>
+              <circle cx="90" cy="180" r="4"/>
+            </g>
+            <g font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="0.8" fill="#F2EBDD" opacity="0.75">
+              <text x="62" y="54">quantize or distill?</text>
+              <text x="92" y="104">open or closed?</text>
+              <text x="52" y="144">RAG or fine-tune?</text>
+              <text x="100" y="184">evals first?</text>
+            </g>
+            <!-- center flow -->
+            <line x1="130" y1="110" x2="180" y2="110" stroke="#F2EBDD" stroke-width="0.8" opacity="0.7"/>
+            <g transform="translate(210 110)">
+              <rect x="-30" y="-14" width="60" height="28" fill="none" stroke="#F2EBDD" stroke-width="1.2"/>
+              <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#F2EBDD">EVAL</text>
+            </g>
+            <line x1="244" y1="110" x2="278" y2="110" stroke="#5BAFA6" stroke-width="1.2"/>
+            <g transform="translate(305 110)">
+              <circle r="16" fill="none" stroke="#5BAFA6" stroke-width="1.4"/>
+              <circle r="3" fill="#5BAFA6"/>
+            </g>
+            <text x="305" y="148" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1" fill="#5BAFA6">SHIP</text>
+            <text x="20" y="200" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#F2EBDD" opacity="0.55">DECISIONS / MODEL TO SYSTEM</text>
+          </svg>
+          <span class="work-bridge__cap">DECISIONS / MODEL TO SYSTEM</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CAPABILITIES & APPROACH · DARK
+       ============================================================ -->
+  <section class="page approach" id="approach" aria-labelledby="approach-title">
+    <div class="page__shell page__shell--dark">
+
+      <div class="kicker kicker--dark" data-reveal>
+        <span>HOW I WORK / 04</span>
+        <span class="kicker__dot" aria-hidden="true">·</span>
+        <span>TRY · COMPARE · WRAP · GROUND</span>
+      </div>
+
+      <header class="section-heading section-heading--dark" data-reveal>
+        <h2 class="section-title" id="approach-title">How I work</h2>
+        <p class="section-sub">Try the next model. Compare it head-to-head. Build the harness when the tooling gets in the way. Ground every claim.</p>
+      </header>
+
+      <div class="practice-summary" data-reveal aria-label="Project scope and ways of working">
+        <div>
+          <span>Project types</span>
+          <strong>Inference · RAG · Agents · Evals · Hardware</strong>
+        </div>
+        <div>
+          <span>Project stages</span>
+          <strong>Try a new model → Compare → Wrap with the right harness</strong>
+        </div>
+        <div>
+          <span>Collaboration</span>
+          <strong>Independent lead · Hackathon teams · Co-builds</strong>
+        </div>
+      </div>
+
+      <div class="capability-grid">
+
+        <article class="capability-card" data-reveal>
+          <div class="capability-head">
+            <span>01.</span>
+            <span>Try / Compare</span>
+          </div>
+          <h3>Always trying the next model</h3>
+          <p>New open-weight releases, new agentic harnesses, new inference runtimes. I run them on the same real input and see what actually changes.</p>
+          <ul class="capability-methods" aria-label="Try / compare methods">
+            <li>Open-weight bench</li>
+            <li>Head-to-head</li>
+            <li>Notes on what breaks</li>
+          </ul>
+          <div class="capability-output">
+            <span>Typical output</span>
+            <strong>An honest comparison, not a screenshot</strong>
+          </div>
+        </article>
+
+        <article class="capability-card" data-reveal>
+          <div class="capability-head">
+            <span>02.</span>
+            <span>Build / Wrap</span>
+          </div>
+          <h3>Build the missing layer</h3>
+          <p>When the model's behavior is interesting but the surrounding tooling isn't, I write the harness, the eval, the agent loop, or the inference path that lets it actually do something.</p>
+          <ul class="capability-methods" aria-label="Build / wrap methods">
+            <li>Agent harnesses</li>
+            <li>Inference paths</li>
+            <li>Eval suites</li>
+          </ul>
+          <div class="capability-output">
+            <span>Typical output</span>
+            <strong>A working system the model can actually live in</strong>
+          </div>
+        </article>
+
+        <article class="capability-card" data-reveal>
+          <div class="capability-head">
+            <span>03.</span>
+            <span>Quantize / Distill</span>
+          </div>
+          <h3>Make the model fit the box</h3>
+          <p>Take a too-large or too-slow model and put it where it needs to run — GPTQ, AWQ, GGUF, knowledge distillation, custom kernels when the path is interesting.</p>
+          <ul class="capability-methods" aria-label="Quantize / distill methods">
+            <li>GPTQ / AWQ</li>
+            <li>GGUF / llama.cpp</li>
+            <li>Distillation</li>
+          </ul>
+          <div class="capability-output">
+            <span>Typical output</span>
+            <strong>The right model at the right cost on the right hardware</strong>
+          </div>
+        </article>
+
+        <article class="capability-card" data-reveal>
+          <div class="capability-head">
+            <span>04.</span>
+            <span>Ground / Loop</span>
+          </div>
+          <h3>Ground the claims</h3>
+          <p>Holdout design, anti-contamination canaries, deterministic harnesses, and numbers the code produces — not numbers I hand-typed.</p>
+          <ul class="capability-methods" aria-label="Ground / loop methods">
+            <li>Holdout sets</li>
+            <li>Regression gates</li>
+            <li>Auto-generated tables</li>
+          </ul>
+          <div class="capability-output">
+            <span>Typical output</span>
+            <strong>Eval results you can re-run and verify</strong>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="about-grid">
+
+        <article class="about-card" data-reveal>
+          <header class="card__label card__label--dark">
+            <span>ABOUT</span>
+            <span>@ISHESATOSHI</span>
+          </header>
+          <p class="about-large">I'm an AI systems generalist. I care most about the boundary between the model and the systems that make it useful — and I'm comfortable jumping from research to infrastructure to a working prototype.</p>
+          <div class="about-story">
+            <p>
+              <span>How I start</span>
+              I read the paper, the model's card, and the surrounding tooling. I pick the smallest honest experiment that compares architectures or harnesses on a real signal — not a synthetic one.
+            </p>
+            <p>
+              <span>How I collaborate</span>
+              I write specs, harnesses, and visualizations. When the existing tooling gets in the way of what a model needs, I build the missing layer.
+            </p>
+          </div>
+          <dl class="about-facts">
+            <div><dt>Focus</dt><dd>Inference · RAG · Agents · Evals</dd></div>
+            <div><dt>Location</dt><dd>Bengaluru, IN</dd></div>
+            <div><dt>Stack</dt><dd>PyTorch · HF · vLLM · PEFT · Open-weight models</dd></div>
+          </dl>
+          <p class="about-small">Open-weight curious. Always comparing how different architectures and harnesses behave. The interesting work is in the gap between the model and the production system.</p>
+        </article>
+
+        <article class="about-card about-card--visual" data-reveal aria-label="The build loop">
+          <header class="card__label card__label--dark">
+            <span>PROCESS / 04</span>
+            <span>FROM BRIEF TO LOOP</span>
+          </header>
+          <div class="about-illustration">
+            <svg viewBox="0 0 360 340" class="scene-svg">
+              <defs>
+                <pattern id="loop-grid-d" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#F2EBDD" stroke-width="0.3" opacity="0.18"/>
+                </pattern>
+                <marker id="loop-arr-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#F2EBDD"/>
+                </marker>
+                <marker id="loop-arr-h-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#5BAFA6"/>
+                </marker>
+              </defs>
+              <rect x="0" y="0" width="360" height="320" fill="url(#loop-grid-d)"/>
+              <!-- center -->
+              <circle cx="180" cy="160" r="120" fill="none" stroke="#F2EBDD" stroke-width="0.6" stroke-dasharray="3 6" opacity="0.6"/>
+              <!-- four nodes -->
+              <g transform="translate(180 60)">
+                <circle r="16" fill="#15171A" stroke="#F2EBDD" stroke-width="1.4"/>
+                <text y="-30" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#F2EBDD">RESEARCH</text>
+              </g>
+              <g transform="translate(280 160)">
+                <circle r="16" fill="#15171A" stroke="#F2EBDD" stroke-width="1.4"/>
+                <text x="32" y="3" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#F2EBDD">BUILD</text>
+              </g>
+              <g transform="translate(180 260)">
+                <circle r="16" fill="#15171A" stroke="#F2EBDD" stroke-width="1.4"/>
+                <text y="38" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#F2EBDD">MEASURE</text>
+              </g>
+              <g transform="translate(80 160)">
+                <circle r="20" fill="none" stroke="#5BAFA6" stroke-width="1.6"/>
+                <circle r="4" fill="#5BAFA6"/>
+                <text x="-30" y="40" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#5BAFA6">LOOP</text>
+              </g>
+              <!-- arcs -->
+              <path d="M 196 60 A 100 100 0 0 1 280 144" fill="none" stroke="#F2EBDD" stroke-width="1" marker-end="url(#loop-arr-d)" opacity="0.8"/>
+              <path d="M 280 176 A 100 100 0 0 1 196 260" fill="none" stroke="#F2EBDD" stroke-width="1" marker-end="url(#loop-arr-d)" opacity="0.8"/>
+              <path d="M 164 260 A 100 100 0 0 1 80 176" fill="none" stroke="#F2EBDD" stroke-width="1" marker-end="url(#loop-arr-d)" opacity="0.8"/>
+              <path d="M 80 144 A 100 100 0 0 1 164 60" fill="none" stroke="#5BAFA6" stroke-width="1.4" marker-end="url(#loop-arr-h-d)"/>
+              <!-- center text -->
+              <text x="180" y="155" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="2" fill="#F2EBDD" opacity="0.7">. 4 STAGES .</text>
+              <text x="180" y="172" text-anchor="middle" font-family="Fraunces, serif" font-size="20" font-variation-settings="'opsz' 144, 'SOFT' 30, 'WONK' 1" fill="#F2EBDD">the loop</text>
+              <!-- bottom caption -->
+              <text x="20" y="304" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#F2EBDD" opacity="0.55">FIG. 07 — HOW I WORK</text>
+            </svg>
+          </div>
+          <ol class="process-list" aria-label="Process steps">
+            <li><span>01</span><p>Try a new model or harness on a real input — never just slides</p></li>
+            <li><span>02</span><p>Compare architectures head-to-head on the same harness, same signal</p></li>
+            <li><span>03</span><p>Ground every claim — deterministic evals, anti-contamination, property tests</p></li>
+            <li><span>04</span><p>Build the missing layer when existing tooling gets in the model's way</p></li>
+          </ol>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT / FOOTER
+       ============================================================ -->
+  <footer class="page site-footer" id="contact" role="contentinfo">
+    <div class="page__shell">
+
+      <section class="contact-card" aria-labelledby="contact-title" data-reveal>
+        <div>
+          <p class="micro-copy">PROJECT INQUIRIES</p>
+          <h2 id="contact-title">Trying a new model, or stuck on the harness around it?</h2>
+          <p class="contact-context">Inference, RAG, agents, evals, quantization, open-weight comparisons, custom hardware — happy to compare notes.</p>
+        </div>
+        <a class="btn btn--primary btn--lg" href="mailto:nqpznmi6q@mozmail.com">Contact me <span aria-hidden="true" class="arrow">→</span></a>
+      </section>
+
+      <div class="footer-grid" data-reveal>
+        <section class="footer-card">
+          <p class="footer-title">Quick links</p>
+          <a href="#top">Back to top <span aria-hidden="true" class="arrow">→</span></a>
+          <a href="#work">View work <span aria-hidden="true" class="arrow">→</span></a>
+          <a href="#approach">How I work <span aria-hidden="true" class="arrow">→</span></a>
+        </section>
+        <section class="footer-card">
+          <p class="footer-title">Contact &amp; resources</p>
+          <a class="footer-action" href="mailto:nqpznmi6q@mozmail.com">
+            <span>Email</span><b>nqpznmi6q@mozmail.com</b>
+          </a>
+          <a class="footer-action" href="https://github.com/isHeSatoshi" target="_blank" rel="noopener">
+            <span>GitHub</span><b>/isHeSatoshi</b>
+          </a>
+          <a class="footer-action" href="https://x.com/isHeSatoshi" target="_blank" rel="noopener">
+            <span>X</span><b>@isHeSatoshi</b>
+          </a>
+          <a class="footer-action" href="resume.html">
+            <span>CV</span><b>View resume</b>
+          </a>
+        </section>
+        <section class="footer-card footer-card--note">
+          <p class="footer-title">Note</p>
+          <p>Models are interesting. The systems around them — inference, retrieval, eval, harness, infrastructure — are where the real work happens.</p>
+          <p>If you're comparing architectures, building a new harness, or stuck on a model that almost works, the conversation is worth having.</p>
+          <span>© 2026 @ISHESATOSHI / SELECTED WORK</span>
+        </section>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
