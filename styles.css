@@ -449,34 +449,6 @@ body.is-loaded  { opacity: 1; transition: opacity 500ms var(--ease) 80ms; }
 }
 .preview__link:hover::after { right: 0; }
 
-/* card 07 · index */
-.card--index { grid-column: span 2; }
-.card--index {
-  display: flex; flex-direction: column; gap: 0;
-}
-.index__link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--rule);
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--ink);
-  transition: color 200ms var(--ease), padding-left 220ms var(--ease);
-}
-.index__link:last-child { border-bottom: 0; }
-.index__link:hover {
-  color: var(--signal);
-  padding-left: 8px;
-}
-.index__link small {
-  font-family: var(--ff-mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  color: var(--ink-mute);
-}
-
 /* 10. BUTTONS ------------------------------------------------- */
 .btn {
   display: inline-flex;
@@ -1092,7 +1064,6 @@ body.is-loaded  { opacity: 1; transition: opacity 500ms var(--ease) 80ms; }
   .card--cv        { grid-column: span 2; }
   .card--skills    { grid-column: span 4; }
   .card--preview   { grid-column: span 4; }
-  .card--index     { grid-column: span 4; }
   .capability-grid { grid-template-columns: repeat(2, 1fr); }
   .capability-card:nth-child(3) { border-left: 0; }
   .capability-card:nth-child(odd) { border-left: 0; }
