@@ -458,11 +458,8 @@
         <p class="row__date">Feb 2026 &ndash; Present</p>
       </div>
       <ul class="bullets">
-        <li>Improved the WeRide 3D occupancy model (Vox-Flow) for self-driving cars &mdash; cars in city traffic can now see surrounding geometry more accurately, raising per-scene accuracy over the previous baseline.</li>
-        <li>Rebuilt the model's core using <strong>Minkowski Engine</strong> (3D sparse data library), cutting GPU memory use enough to fit longer video sequences during training on the same hardware.</li>
-        <li>Added custom attention masks so the model stops &ldquo;flickering&rdquo; between predictions of moving objects frame-to-frame — a key noise source for downstream planners.</li>
-        <li>Profiled and fixed a training-stability bug across an <strong>H100 cluster</strong>, unblocking multi-node runs that previously crashed mid-training.</li>
-        <li>Built a shared benchmarking harness with the perception team so every weekly model release is evaluated on the same urban driving scenarios.</li>
+        <li>Worked on the Vox-Flow 3D occupancy model for self-driving cars, raising per-scene accuracy over the previous baseline on H200 nodes.</li>
+        <li>Worked on learned world models × perception × RL environments for autonomous driving at scale, training driving policies through trial and error in a learned simulator.</li>
       </ul>
 
       <div class="row">
