@@ -241,7 +241,7 @@
       <div class="kicker" data-reveal>
         <span>SELECTED WORK / 2024—2026</span>
         <span class="kicker__dot" aria-hidden="true">·</span>
-        <span>06 SYSTEMS · INFERENCE · RAG · VISION · HARDWARE</span>
+        <span>07 SYSTEMS · INFERENCE · RAG · VISION · HARDWARE · LLM</span>
       </div>
 
       <header class="section-heading" data-reveal>
@@ -336,8 +336,8 @@
         <div class="project-info">
           <div class="project-info__main">
             <p class="project-index">02 / GROUNDED LEARNING</p>
-            <h3 class="project-name">GCL &amp; OpenContinualEnv</h3>
-            <p class="project-type">Execution-grounded lifelong MDP. Deployed code LLMs that improve from real feedback.</p>
+            <h3 class="project-name">RL Environment for Continual Learning at Scale</h3>
+            <p class="project-type">Execution-grounded lifelong learning. LLMs that keep what they know, only swap what helps.</p>
           </div>
           <dl class="project-facts">
             <div><dt>Moment</dt><dd>After shipping a model</dd></div>
@@ -593,14 +593,14 @@
         <div class="project-info">
           <div class="project-info__main">
             <p class="project-index">05 / RAG HACKATHON</p>
-            <h3 class="project-name">BIS Standards Discovery</h3>
-            <p class="project-type">RAG over Indian BIS construction standards. BGE-M3 + BM25 + RRF + deterministic rerank.</p>
+            <h3 class="project-name">BIS Standards RAG</h3>
+            <p class="project-type">Natural-language RAG over Indian BIS standards. Maps product descriptions and questions to the right IS codes.</p>
           </div>
           <dl class="project-facts">
             <div><dt>Moment</dt><dd>Looking up the right IS code</dd></div>
             <div><dt>Inputs</dt><dd>Natural-language query · IS corpus</dd></div>
-            <div><dt>Design focus</dt><dd>Deterministic ranking (MRR@5 = 0.939)</dd></div>
-            <div><dt>Deliverables</dt><dd>Pipeline · reranker · API</dd></div>
+            <div><dt>Design focus</dt><dd>Deterministic ranking · 0.939 MRR@5 · 1.1s latency</dd></div>
+            <div><dt>Deliverables</dt><dd>Production system · public release</dd></div>
           </dl>
           <div class="project-footer">
             <div class="project-meta">
@@ -676,8 +676,8 @@
             </svg>
           </div>
           <div class="project-visual__foot">
-            <span>IIT Tirupati × BIS Hackathon</span>
-            <span>1.11s latency · 98% Hit@3</span>
+            <span>Used by BIS · tens of thousands of users</span>
+            <span>1.1s latency · 98% Hit@3 · 0.939 MRR@5</span>
           </div>
         </div>
       </article>
@@ -764,7 +764,95 @@
         </div>
       </article>
 
-      <!-- All-work bridge card -->
+      <!-- 07 SMALLJEV -->
+      <article class="project-row" data-reveal>
+        <div class="project-info">
+          <div class="project-info__main">
+            <p class="project-index">07 / OPEN-SOURCE LLM</p>
+            <h3 class="project-name">SmallJev</h3>
+            <p class="project-type">Open-source 2.5B-parameter variant of TypeSafe's Jev. Span-pooled semantic scoring — one forward pass, zero generated tokens.</p>
+          </div>
+          <dl class="project-facts">
+            <div><dt>Moment</dt><dd>Jev-like intelligence on consumer hardware</dd></div>
+            <div><dt>Inputs</dt><dd>Text spans · semantic scoring head</dd></div>
+            <div><dt>Design focus</dt><dd>One pass · zero tokens · spans across devices</dd></div>
+            <div><dt>Deliverables</dt><dd>Model · eval · benchmarks</dd></div>
+          </dl>
+          <div class="project-footer">
+            <div class="project-meta">
+              <span>2026</span>
+              <span>Open-source LLM</span>
+            </div>
+            <a class="case-link" href="https://github.com/isHeSatoshi" target="_blank" rel="noopener">View profile <span aria-hidden="true" class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="project-visual" aria-hidden="true">
+          <div class="project-visual__head">
+            <span>07 / SMALLJEV</span>
+            <span>SPAN-POOLED SCORING</span>
+          </div>
+          <div class="project-visual__stage">
+            <svg viewBox="0 0 360 200" class="scene-svg scene-svg--inline">
+              <defs>
+                <pattern id="smalljev-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#15171A" stroke-width="0.3" opacity="0.18"/>
+                </pattern>
+                <marker id="smalljev-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#15171A"/>
+                </marker>
+                <marker id="smalljev-arr-h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#0E5E5A"/>
+                </marker>
+              </defs>
+              <rect x="0" y="0" width="360" height="200" fill="url(#smalljev-grid)"/>
+
+              <!-- Input: TEXT -->
+              <g transform="translate(50 100)">
+                <rect x="-28" y="-14" width="56" height="28" fill="none" stroke="#15171A" stroke-width="1"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">TEXT</text>
+              </g>
+              <line x1="80" y1="100" x2="105" y2="100" stroke="#15171A" stroke-width="0.8" marker-end="url(#smalljev-arr)"/>
+
+              <!-- SmallJev model -->
+              <g transform="translate(175 100)">
+                <rect x="-58" y="-32" width="116" height="64" fill="none" stroke="#15171A" stroke-width="1.2"/>
+                <text y="-18" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">SMALLJEV</text>
+                <line x1="-48" y1="-10" x2="48" y2="-10" stroke="#15171A" stroke-width="0.5" opacity="0.4"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A">SPAN POOL</text>
+                <text y="17" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.7">2.5B · ONE PASS</text>
+              </g>
+
+              <!-- Output: SCORE -->
+              <line x1="235" y1="100" x2="262" y2="100" stroke="#0E5E5A" stroke-width="1.2" marker-end="url(#smalljev-arr-h)"/>
+              <g transform="translate(290 100)">
+                <rect x="-25" y="-14" width="50" height="28" fill="#0E5E5A"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#F2EBDD">SCORE</text>
+              </g>
+              <text x="290" y="130" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#0E5E5A" opacity="0.85">0 generated tokens</text>
+
+              <!-- Device range -->
+              <g transform="translate(45 55)">
+                <line x1="0" y1="0" x2="40" y2="0" stroke="#15171A" stroke-width="0.6"/>
+                <text x="0" y="-6" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">RTX 4060</text>
+              </g>
+              <g transform="translate(335 55)">
+                <line x1="-40" y1="0" x2="0" y2="0" stroke="#15171A" stroke-width="0.6"/>
+                <text x="0" y="-6" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">PHONES</text>
+              </g>
+              <path d="M 85 55 L 295 55" stroke="#15171A" stroke-width="0.4" stroke-dasharray="2 4" opacity="0.4"/>
+              <text x="190" y="50" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="0.8" fill="#15171A" opacity="0.5">RASPBERRY PI 5</text>
+
+              <!-- FIG + metric -->
+              <text x="20" y="180" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#15171A" opacity="0.55">FIG. 07 — SPAN-POOLED SCORING</text>
+              <text x="340" y="180" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#0E5E5A" opacity="0.8">#7 JEVBENCH · 68.5/100</text>
+            </svg>
+          </div>
+          <div class="project-visual__foot">
+            <span>Open-source · 2.5B parameters</span>
+            <span>RTX 4060 → phones</span>
+          </div>
+        </div>
+      </article>
       <a class="all-work-card" href="https://github.com/isHeSatoshi" target="_blank" rel="noopener" data-reveal>
         <div class="work-bridge__copy">
           <span class="micro-copy">OTHER WORK</span>
