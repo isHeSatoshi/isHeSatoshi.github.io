@@ -509,12 +509,11 @@
         </div>
       </div>
       <ul class="bullets">
-        <li>A deterministic <strong>state machine</strong> in front of any object detector: idle every 0.4 s, fire on straddle, hot-cap every 0.1 s while a task entity is actively crossing the band midline.</li>
-        <li>Proven <strong>recall guarantee</strong> (Lemmas 1&ndash;3): any midline crossing the detector would see at full rate is reported with bounded timestamp error &le; 0.4 s + 0.5/f<sub>ps</sub>. Property tests pin the boundary cases.</li>
-        <li>Persistent world memory carries <strong>identity and motion across idle gaps</strong> &mdash; no upstream tracker required.</li>
-        <li>On 8 real aerial clips (YOLOv8s @ 640, VisDrone + VIRAT, RTX 4060 Ti): <strong>25&ndash;42% of windows sampled</strong>, up to <strong>78.7% wall-clock reduction</strong>; GT eval covers every midline crossing at a 0.3 s cadence (60/60).</li>
-        <li><strong>Trained-free, model-agnostic, tracker-free</strong> &mdash; a patent and literature search found no prior art teaching the combination.</li>
-        <li>Also covers the broader <strong>Persistent Perception Computing</strong> line of work: contextual & event-aware video AI, task-oriented perception orchestration, evidence & audit workflows, plug-and-play perception backends.</li>
+        <li>A deterministic state machine goes in front of any object detector: idle every 0.4 s, fire on straddle, hot-cap every 0.1 s while a task entity is crossing the band midline.</li>
+        <li>Recall is bounded by Lemmas 1&ndash;3. Any midline crossing the detector would have seen at full rate gets reported with timestamp error &le; 0.4 s + 0.5/f<sub>ps</sub>. Property tests cover the boundary cases.</li>
+        <li>World memory holds identity and motion across the idle gaps, so nothing upstream has to track anything.</li>
+        <li>On 8 real aerial clips (YOLOv8s @ 640, VisDrone + VIRAT, RTX 4060 Ti): 25&ndash;42% of windows sampled, up to 78.7% less wall-clock. The GT eval covers every midline crossing at a 0.3 s cadence, 60 of 60.</li>
+        <li>Training-free, model-agnostic, tracker-free. A patent and literature search turned up no prior art on that combination.</li>
       </ul>
 
       <div class="row">
@@ -585,7 +584,6 @@
       </div>
       <ul class="bullets">
         <li>1.84s for a 512px image at 6 steps, 1.45s at 3 steps, all on a 16GB consumer card. Text encode and VAE take 0.78s before any denoising starts, which is the floor &mdash; not the step count.</li>
-        <li>Two ComfyUI bugs found in the same stack: <code>_gated_residual</code> mutates hidden state in place across 32 blocks, <code>cast_bias_weight</code> hands out views into a reusable async cast buffer. Both are guarded by <code>in_training</code>, both break training silently, both leave inference pixel-identical.</li>
       </ul>
     </section>
 
