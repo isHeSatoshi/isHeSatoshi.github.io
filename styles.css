@@ -364,8 +364,8 @@ body.is-loaded  { opacity: 1; transition: opacity 500ms var(--ease) 80ms; }
 .cv__meta dd { margin: 0; font-size: 12.5px; color: var(--ink); font-weight: 500; }
 
 /* card 05 · skills */
-.card--skills { grid-column: span 2; }
-.skill-list { display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.card--skills { grid-column: span 6; }
+.skill-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; flex: 1; }
 .skill-list > div { display: flex; flex-direction: column; gap: 4px; }
 .skill-list span {
   font-family: var(--ff-mono);
@@ -380,74 +380,6 @@ body.is-loaded  { opacity: 1; transition: opacity 500ms var(--ease) 80ms; }
   line-height: 1.45;
   color: var(--ink-2);
 }
-
-/* card 06 · preview */
-.card--preview { grid-column: span 4; }
-.preview__visual {
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  padding: 12px;
-  margin-bottom: 16px;
-  transition: transform 320ms var(--ease);
-}
-.card--preview:hover .preview__visual { transform: scale(1.01); }
-.preview__note {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 12px 0 14px;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  margin-bottom: 14px;
-}
-.preview__note p {
-  font-family: var(--ff-display);
-  font-variation-settings: 'opsz' 50, 'SOFT' 30, 'WONK' 1;
-  font-size: 18px;
-  line-height: 1.25;
-  letter-spacing: -0.012em;
-  margin: 0;
-  color: var(--ink);
-}
-.preview__note b { font-weight: 600; color: var(--signal); }
-.preview__bottom {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: auto;
-}
-.preview__bottom > div { display: flex; flex-direction: column; gap: 4px; }
-.preview__bottom strong {
-  font-family: var(--ff-display);
-  font-variation-settings: 'opsz' 50, 'SOFT' 30, 'WONK' 1;
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: -0.012em;
-  color: var(--ink);
-}
-.preview__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--ff-mono);
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--signal);
-  position: relative;
-  padding: 4px 0;
-}
-.preview__link::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 100%;
-  bottom: 0;
-  height: 1px;
-  background: var(--signal);
-  transition: right 280ms var(--ease);
-}
-.preview__link:hover::after { right: 0; }
 
 /* 10. BUTTONS ------------------------------------------------- */
 .btn {
@@ -1063,7 +995,6 @@ body.is-loaded  { opacity: 1; transition: opacity 500ms var(--ease) 80ms; }
   .card--identity { grid-column: span 4; min-height: 0; }
   .card--cv        { grid-column: span 2; }
   .card--skills    { grid-column: span 4; }
-  .card--preview   { grid-column: span 4; }
   .capability-grid { grid-template-columns: repeat(2, 1fr); }
   .capability-card:nth-child(3) { border-left: 0; }
   .capability-card:nth-child(odd) { border-left: 0; }

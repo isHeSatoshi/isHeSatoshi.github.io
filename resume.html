@@ -563,6 +563,30 @@
       <ul class="bullets">
         <li>Solved the problem of businesses struggling to navigate huge BIS standards documents by building a natural-language RAG system that maps product descriptions and questions to the relevant IS codes. Achieved 98% Hit Rate@3, 86% Hit Rate@1, 0.939 MRR@5, and ~1.1s average latency on a 100-query evaluation set using hybrid dense + BM25 retrieval with deterministic ranking. Production system is now used by BIS and tens of thousands of users; built and open-sourced the public release.</li>
       </ul>
+
+      <div class="row">
+        <div>
+          <p class="row__title">Inference Reliability Engineer &mdash; Reliability Agent on TrueForge</p>
+          <p class="row__org"><em>Agent &middot; vLLM &middot; MCP</em>Per-GPU-node controller &middot; SLO + evidence policy</p>
+        </div>
+        <p class="row__date"><a href="https://github.com/isHeSatoshi/Inference-Reliability-Engineer" target="_blank" rel="noopener">repo &nearr;</a></p>
+      </div>
+      <ul class="bullets">
+        <li>The agent works from symptoms only: tools return data, never the chaos scenario name, and <code>apply_production_config</code> / <code>rollback_production</code> need explicit approval before they touch a real deployment.</li>
+        <li>Per-GPU-node controller wraps vLLM with metrics, logs, replay, and eval behind an MCP server. SLOs and evidence rules are pinned in <code>policy.yaml</code> so the agent cannot talk itself past them.</li>
+      </ul>
+
+      <div class="row">
+        <div>
+          <p class="row__title">localbanana &mdash; Sub-2s Local Image Pipeline</p>
+          <p class="row__org"><em>Diffusion &middot; measurement &middot; ComfyUI</em>16GB consumer card &middot; Qwen-Image-2.1</p>
+        </div>
+        <p class="row__date"><a href="https://github.com/isHeSatoshi/localbanana" target="_blank" rel="noopener">repo &nearr;</a></p>
+      </div>
+      <ul class="bullets">
+        <li>1.84s for a 512px image at 6 steps, 1.45s at 3 steps, all on a 16GB consumer card. Text encode and VAE take 0.78s before any denoising starts, which is the floor &mdash; not the step count.</li>
+        <li>Two ComfyUI bugs found in the same stack: <code>_gated_residual</code> mutates hidden state in place across 32 blocks, <code>cast_bias_weight</code> hands out views into a reusable async cast buffer. Both are guarded by <code>in_training</code>, both break training silently, both leave inference pixel-identical.</li>
+      </ul>
     </section>
 
     <!-- ============== SKILLS ============== -->
