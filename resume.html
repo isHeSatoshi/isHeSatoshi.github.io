@@ -421,7 +421,7 @@
     <header class="hd">
       <div>
         <h1 class="hd__name">@isHeSatoshi</h1>
-        <p class="hd__role">Computer Science · 2026</p>
+        <p class="hd__role">LLM Research Engineer <em>·</em> Agents, Evals &amp; Harness</p>
       </div>
       <div class="hd__contact">
         <a href="mailto:nqpznmi6q@mozmail.com">nqpznmi6q@mozmail.com</a><br/>
@@ -430,6 +430,12 @@
         <a href="https://github.com/isHeSatoshi" target="_blank" rel="noopener">github.com/isHeSatoshi</a>
       </div>
     </header>
+
+    <!-- ============== SUMMARY ============== -->
+    <section aria-labelledby="sec-sum">
+      <h2 class="sec__kicker" id="sec-sum">Summary</h2>
+      <p class="interests">LLM research engineer working on agents, evaluation harnesses, and inference. Improving pretrained autonomous-driving decision models with reinforcement learning, shipping production RAG systems, and distilling models down to run on consumer hardware. Most interested in how attention and quantization actually behave at runtime, and where the architecture breaks.</p>
+    </section>
 
     <!-- ============== EDUCATION ============== -->
     <section aria-labelledby="sec-edu">
@@ -458,7 +464,7 @@
         <p class="row__date">Feb 2026 &ndash; Present</p>
       </div>
       <ul class="bullets">
-        <li>Worked on Full Self-Driving decision-making for autonomous vehicles, using RL environments and simulation to improve the behavior of pretrained driving models.</li>
+        <li>Improved pretrained autonomous-driving models by building reinforcement learning environments and simulation workflows to investigate decision-making failures.</li>
         <li>Designed RL environments that recreate those conditions and trained policies through trial and error on H200 nodes to fix the identified decision failures.</li>
       </ul>
 
@@ -519,12 +525,15 @@
       <div class="row">
         <div>
           <p class="row__title">RL Environment for Continual Learning at Scale</p>
-          <p class="row__org"><em>Open Source &middot; LLMs</em>Execution-grounded lifelong learning for deployed code LLMs</p>
+          <p class="row__org"><em>Agent Harness &middot; Evals</em>Execution-grounded lifelong learning for deployed code LLMs</p>
         </div>
         <p class="row__date"><a href="https://github.com/isHeSatoshi/RL-Environment-for-Continual-Learning-at-Scale" target="_blank" rel="noopener">repo &nearr;</a></p>
       </div>
       <ul class="bullets">
-        <li>Built an environment where an LLM learns new task families forever from execution feedback alone &mdash; no gold labels in training, no gold labels in the safety gate. Updates the model with real PyTorch + LoRA adapter swaps, then rolls back any update that hurts holdout performance &mdash; so the model keeps what it already knew. Evaluated on MBPP and HumanEval with strict train/holdout splits; the main finding was that switching the LoRA adapter each step beats self reflection that sees the gold answer.</li>
+        <li>Built a Gymnasium-style training harness where an agent learns new task families from real execution feedback alone &mdash; no gold labels in training and none in the safety gate.</li>
+        <li>Runs agent actions inside an isolated sandbox with AST safety checks, timeouts, and error capture, so reward comes from code actually executing rather than a judge model.</li>
+        <li>Added a holdout-veto safety gate that rolls back any LoRA adapter update hurting held-out accuracy, and replay-based memory to control catastrophic forgetting across task streams.</li>
+        <li>Evaluated on MBPP and HumanEval with deterministic content-hash train/holdout splits; the main finding was that swapping the LoRA adapter each step beats self-reflection that sees the gold answer.</li>
       </ul>
 
       <div class="row">
@@ -535,10 +544,8 @@
         <p class="row__date">Shipped</p>
       </div>
       <ul class="bullets">
-        <li>Designed a <strong>custom 4-mic XMOS audio PCB</strong> so the assistant can hear you from across a noisy room (beamforming + on-chip noise suppression).</li>
-        <li>Wired a distributed <strong>ESP32 + Raspberry Pi 5</strong> network for low-latency audio streaming, wake-word detection, and command routing across rooms.</li>
-        <li>Benchmarked 3 versions of a <strong>2B-parameter LLM</strong> (off-the-shelf, fine-tuned, and custom pre-trained) and picked the best latency-vs-quality trade-off on the Pi's CPU.</li>
-        <li>Shipped an end-to-end pipeline (mic → DSP → wake router → LLM intent → action) with a live web dashboard for debugging in real home environments.</li>
+        <li>Designed a custom 4-mic XMOS audio PCB so the assistant can hear you from across a noisy room (beamforming plus on-chip noise suppression), and wired a distributed ESP32 plus Raspberry Pi network for low-latency audio, wake-word detection, and command routing across rooms.</li>
+        <li>Benchmarked 3 versions of a 2B-parameter LLM (off-the-shelf, fine-tuned, and custom pre-trained) and shipped an end-to-end pipeline (mic, DSP, wake router, LLM intent, action) with a live web dashboard for debugging in real home environments.</li>
       </ul>
 
       <div class="row">
@@ -577,13 +584,13 @@
 
       <div class="row">
         <div>
-          <p class="row__title">localbanana &mdash; Sub-2s Local Image Pipeline</p>
-          <p class="row__org"><em>Diffusion &middot; measurement &middot; ComfyUI</em>16GB consumer card &middot; Qwen-Image-2.1</p>
+          <p class="row__title">localbanana &mdash; DMD Model Distillation</p>
+          <p class="row__org"><em>Model Distillation</em>Qwen-Image-2.1 &middot; consumer GPU</p>
         </div>
         <p class="row__date"><a href="https://github.com/isHeSatoshi/localbanana" target="_blank" rel="noopener">repo &nearr;</a></p>
       </div>
       <ul class="bullets">
-        <li>Distilled Qwen-Image-2.1 using Distribution Matching Distillation (DMD) and a teacher&ndash;student architecture, enabling ~34 GB &rarr; 16 GB GPU deployment and 1.45 s/image at 512 px (3 steps).</li>
+        <li>Reduced deployment from 34 GB to 16 GB and generated 512 px images in 1.45 s through DMD-based Qwen-Image-2.1 distillation, reaching Nano Banana class image generations.</li>
       </ul>
     </section>
 
@@ -592,30 +599,39 @@
       <h2 class="sec__kicker" id="sec-skl">Skills</h2>
       <div class="skills">
         <div class="skills__group">
-          <p class="skills__k">Model layer</p>
-          LLM architecture · open-weight models · fine-tuning (PEFT LoRA) · distillation · quantization (GPTQ · AWQ · GGUF) · inference (vLLM) · multi-node H100 training
+          <p class="skills__k">Core</p>
+          LLM Agents · Agent Evals · Training Harnesses · Machine Learning · Computer Vision · LLM · Inference · Embedded Systems · Python
         </div>
         <div class="skills__group">
-          <p class="skills__k">RAG &amp; Agents</p>
-          Retrieval pipelines (dense + BM25) · RRF fusion · rerankers · LangChain · agentic coding harnesses · tool use · context engineering
+          <p class="skills__k">Stack</p>
+          PyTorch · TensorFlow · OpenCV · LangChain · Transformers · LoRA / PEFT · Replay &amp; EWC · Reward Design · Sandbox Isolation · Gymnasium · Trajectory Logging · LLM Fine-Tuning · Quantization (GPTQ, AWQ) · Retrieval (BM25, RAG) · Raspberry Pi · Microcontrollers · FPGA · Flask
         </div>
         <div class="skills__group">
-          <p class="skills__k">Evaluation</p>
-          Holdout design · anti-contamination canaries · deterministic harnesses · MMLU / IFEval / HumanEval · property tests · ground-truth signals
-        </div>
-        <div class="skills__group">
-          <p class="skills__k">Stack &amp; Systems</p>
-          PyTorch · Hugging Face · Transformers · CUDA · YOLOv8 · Detectron2 · Minkowski Engine · OpenCV · Raspberry Pi · ESP32 · Arduino · FPGA
+          <p class="skills__k">Soft skills</p>
+          R&amp;D · Creative Problem Solving · Leadership
         </div>
       </div>
     </section>
 
-    <!-- ============== RECOGNITION ============== -->
+    <!-- ============== COMMUNITY ============== -->
+    <section aria-labelledby="sec-com">
+      <h2 class="sec__kicker" id="sec-com">Community</h2>
+      <div class="row">
+        <div>
+          <p class="row__title">Ambassador</p>
+          <p class="row__org"><a href="https://factory.ai/ambassador" target="_blank" rel="noopener">The Factory Guild</a> &middot; Factory</p>
+        </div>
+        <p class="row__date">2026 &ndash; Present</p>
+      </div>
+    </section>
+
+    <!-- ============== HACKATHONS ============== -->
     <section aria-labelledby="sec-rec">
-      <h2 class="sec__kicker" id="sec-rec">Recognition</h2>
+      <h2 class="sec__kicker" id="sec-rec">Hackathons</h2>
       <div class="recog">
-        <p class="recog__line"><b>Winner</b>IIT Tirupati × BIS RAG Hackathon · Lion Circuits Hardware Hackathon · Kaggle MedGemma · Composio Agents Hackathon</p>
-        <p class="recog__line"><b>Finalist</b>IIT Delhi AI Agents Hackathon (3rd, 2025) · Techfest STEM Olympiad, IIT Bombay (Runner-Up, 2020) · AI Hardware Hackathon 2026</p>
+        <p class="recog__line"><b>Winner</b>Composio Agents Hackathon &middot; Lion Circuits Hardware Hackathon &middot; IIT Tirupati &times; BIS RAG Hackathon &middot; Kaggle MedGemma</p>
+        <p class="recog__line"><b>Finalist</b>IIT Delhi AI Agents Hackathon (2025) &middot; Techfest STEM Olympiad, IIT Bombay (2020) &middot; AI Hardware Hackathon 2026</p>
+        <p class="recog__line"><b>Took part</b>GitLab Orbit &middot; IIIT Bangalore Quantum Track &middot; Amazon ML Challenge &middot; AWS Agentic AI &middot; Solana Hacker House</p>
       </div>
     </section>
 

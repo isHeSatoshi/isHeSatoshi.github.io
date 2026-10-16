@@ -110,6 +110,7 @@
           </div>
           <ul class="identity-links" aria-label="Links">
             <li><a href="https://github.com/isHeSatoshi" target="_blank" rel="noopener">github.com/isHeSatoshi</a></li>
+            <li><a href="https://factory.ai/ambassador" target="_blank" rel="noopener">Factory Guild Ambassador</a></li>
             <li><a href="mailto:nqpznmi6q@mozmail.com">nqpznmi6q@mozmail.com</a></li>
             <li><a href="https://x.com/isHeSatoshi" target="_blank" rel="noopener">@isHeSatoshi</a></li>
           </ul>
@@ -870,20 +871,20 @@
       <article class="project-row" data-reveal>
         <div class="project-info">
           <div class="project-info__main">
-            <p class="project-index">09 / LOCAL INFERENCE</p>
+            <p class="project-index">09 / MODEL DISTILLATION</p>
             <h3 class="project-name">localbanana</h3>
-            <p class="project-type">Sub-2-second local image pipeline on a 16GB consumer card. Plus the measurement work showing where the time goes.</p>
+            <p class="project-type">DMD distillation of Qwen-Image-2.1. Nano Banana class image generation on a 16GB consumer card, in 1.45 s.</p>
           </div>
           <dl class="project-facts">
-            <div><dt>Moment</dt><dd>Local diffusion that actually finishes fast</dd></div>
-            <div><dt>Inputs</dt><dd>Prompt · few-step Qwen-Image-2.1</dd></div>
-            <div><dt>Design focus</dt><dd>Where the seconds actually go</dd></div>
-            <div><dt>Deliverables</dt><dd>Pipeline · measurements · two ComfyUI fixes</dd></div>
+            <div><dt>Moment</dt><dd>Getting an image model onto a normal GPU</dd></div>
+            <div><dt>Inputs</dt><dd>Teacher model · student · consumer card</dd></div>
+            <div><dt>Design focus</dt><dd>Distilling for a 16GB budget</dd></div>
+            <div><dt>Deliverables</dt><dd>Distilled weights · eval · speed measurements</dd></div>
           </dl>
           <div class="project-footer">
             <div class="project-meta">
               <span>2026</span>
-              <span>Local diffusion · measurement</span>
+              <span>Model distillation</span>
             </div>
             <a class="case-link" href="https://github.com/isHeSatoshi/localbanana" target="_blank" rel="noopener">View repository <span aria-hidden="true" class="arrow">↗</span></a>
           </div>
@@ -907,44 +908,38 @@
                 </marker>
               </defs>
               <rect x="0" y="0" width="360" height="200" fill="url(#lb-grid)"/>
-              <g transform="translate(45 100)">
-                <rect x="-26" y="-14" width="52" height="28" fill="none" stroke="#15171A" stroke-width="1"/>
-                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">PROMPT</text>
+              <!-- teacher -->
+              <g transform="translate(58 78)">
+                <rect x="-30" y="-14" width="60" height="28" fill="none" stroke="#15171A" stroke-width="1"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">TEACHER</text>
               </g>
-              <line x1="73" y1="100" x2="95" y2="100" stroke="#15171A" stroke-width="0.8" marker-end="url(#lb-arr)"/>
-              <g transform="translate(135 100)">
-                <rect x="-34" y="-14" width="68" height="28" fill="#0E5E5A"/>
-                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#F2EBDD">TEXT ENCODE</text>
+              <text x="58" y="46" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">Qwen-Image-2.1</text>
+              <text x="58" y="108" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">34 GB</text>
+              <line x1="88" y1="78" x2="140" y2="100" stroke="#15171A" stroke-width="0.8" marker-end="url(#lb-arr)"/>
+              <!-- DMD -->
+              <g transform="translate(180 100)">
+                <rect x="-36" y="-16" width="72" height="32" fill="#0E5E5A"/>
+                <text y="-2" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#F2EBDD">DMD</text>
+                <text y="10" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#F2EBDD" opacity="0.75">teacher &#8594; student</text>
               </g>
-              <text x="135" y="130" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#0E5E5A" opacity="0.85">0.78s fixed</text>
-              <line x1="171" y1="100" x2="195" y2="100" stroke="#15171A" stroke-width="0.8" marker-end="url(#lb-arr)"/>
-              <g transform="translate(232 100)">
-                <rect x="-32" y="-14" width="64" height="28" fill="none" stroke="#15171A" stroke-width="1.2"/>
-                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">DENOISE ×N</text>
+              <line x1="218" y1="100" x2="268" y2="100" stroke="#0E5E5A" stroke-width="1.2" marker-end="url(#lb-arr-h)"/>
+              <!-- student -->
+              <g transform="translate(302 100)">
+                <rect x="-30" y="-14" width="60" height="28" fill="none" stroke="#0E5E5A" stroke-width="1.4"/>
+                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#0E5E5A">STUDENT</text>
               </g>
-              <text x="232" y="130" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.6" fill="#15171A" opacity="0.65">0.365 + 0.143·(N-1)</text>
-              <line x1="266" y1="100" x2="290" y2="100" stroke="#15171A" stroke-width="0.8" marker-end="url(#lb-arr)"/>
-              <g transform="translate(320 100)">
-                <rect x="-26" y="-14" width="52" height="28" fill="none" stroke="#15171A" stroke-width="1"/>
-                <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">VAE</text>
+              <text x="302" y="130" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#0E5E5A" opacity="0.85">16 GB · 1.45 s</text>
+              <!-- loss annotation -->
+              <g transform="translate(180 158)">
+                <text x="0" y="0" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.55">match the output distribution, not the pixels</text>
               </g>
-              <g transform="translate(50 50)">
-                <text x="0" y="0" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.55">6 steps · 1.84s</text>
-              </g>
-              <g transform="translate(150 50)">
-                <text x="0" y="0" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.55">3 steps · 1.45s</text>
-              </g>
-              <g transform="translate(250 50)">
-                <text x="0" y="0" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.55">1 step · 1.12s</text>
-              </g>
-              <path d="M 50 56 L 320 56" stroke="#15171A" stroke-width="0.4" stroke-dasharray="2 4" opacity="0.4"/>
-              <text x="20" y="180" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#15171A" opacity="0.55">FIG. 09 — COST PER STEP</text>
-              <text x="340" y="180" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#0E5E5A" opacity="0.8">512px · 16GB CARD</text>
+              <text x="20" y="180" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#15171A" opacity="0.55">FIG. 09 — TEACHER / STUDENT</text>
+              <text x="340" y="180" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2" fill="#0E5E5A" opacity="0.8">34 GB &#8594; 16 GB</text>
             </svg>
           </div>
           <div class="project-visual__foot">
-            <span>3-step matches 4-step on mean and median</span>
-            <span>two ComfyUI bugs patched</span>
+            <span>512px · 3 steps</span>
+            <span>Nano Banana class output</span>
           </div>
         </div>
       </article>
@@ -1217,6 +1212,9 @@
           <a class="footer-action" href="https://github.com/isHeSatoshi" target="_blank" rel="noopener">
             <span>GitHub</span><b>/isHeSatoshi</b>
           </a>
+          <a class="footer-action" href="https://factory.ai/ambassador" target="_blank" rel="noopener">
+            <span>Guild</span><b>Factory Ambassador</b>
+          </a>
           <a class="footer-action" href="https://x.com/isHeSatoshi" target="_blank" rel="noopener">
             <span>X</span><b>@isHeSatoshi</b>
           </a>
@@ -1226,7 +1224,7 @@
         </section>
         <section class="footer-card">
           <p class="footer-title">Last updated</p>
-          <p>August 2026</p>
+          <p>October 2026</p>
           <span>© 2026 @ISHESATOSHI · BENGALURU, IN</span>
         </section>
       </div>
