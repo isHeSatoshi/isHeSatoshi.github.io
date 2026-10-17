@@ -32,7 +32,6 @@
       </a>
       <nav class="nav__links" aria-label="Primary navigation">
         <a href="#work">Projects</a>
-        <a href="#my-approach">Approach</a>
         <a href="resume.html">Resume</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -132,49 +131,12 @@
 
         <!-- 02 / CV -->
         <article class="card card--cv" data-reveal>
-          <header class="card__label">
-            <span>RESUME</span>
-            <span>02</span>
-          </header>
           <div class="cv__body">
-            <div class="cv__word">CV</div>
-            <dl class="cv__meta">
-              <div>
-                <dt>Contents</dt>
-                <dd>Experience / Work / Skills</dd>
-              </div>
-              <div>
-                <dt>Edition</dt>
-                <dd>English · 1 page</dd>
-              </div>
-            </dl>
+            <div>
+              <p class="micro-copy">RESUME</p>
+              <div class="cv__word">CV</div>
+            </div>
             <a class="btn btn--quiet" href="resume.html">View resume <span aria-hidden="true" class="arrow">↗</span></a>
-          </div>
-        </article>
-
-        <!-- 03 / WHAT I USE -->
-        <article class="card card--skills" data-reveal>
-          <header class="card__label">
-            <span>WHAT I USE</span>
-            <span>03</span>
-          </header>
-          <div class="skill-list">
-            <div>
-              <span>01 / Inference</span>
-              <strong>Model serving, quantization (GPTQ · AWQ · GGUF), distillation, vLLM, multi-node H100 training.</strong>
-            </div>
-            <div>
-              <span>02 / Open Models</span>
-              <strong>LLM architecture, open-weight evaluation, PEFT LoRA fine-tuning, Qwen / Llama / Mistral families.</strong>
-            </div>
-            <div>
-              <span>03 / RAG &amp; Agents</span>
-              <strong>Retrieval pipelines, dense + sparse fusion, reranking, agentic coding harnesses, tool use.</strong>
-            </div>
-            <div>
-              <span>04 / Evaluation</span>
-              <strong>Holdout design, anti-contamination canaries, deterministic benchmarks, ground-truth signals.</strong>
-            </div>
           </div>
         </article>
 
@@ -196,7 +158,6 @@
 
       <header class="section-heading" data-reveal>
         <h2 class="section-title" id="work-title">Projects</h2>
-        <p class="section-sub">Nine things I've built, newest first. Each one has a repo and a reason it exists.</p>
       </header>
 
       <!-- 01 UNIVERSAL REDUCER -->
@@ -979,196 +940,6 @@
   </section>
 
   <!-- ============================================================
-       MY APPROACH · DARK
-       ============================================================ -->
-  <section class="page approach" id="my-approach" aria-labelledby="approach-title">
-    <div class="page__shell page__shell--dark">
-
-      <div class="kicker kicker--dark" data-reveal>
-        <span>MY APPROACH / 04</span>
-        <span class="kicker__dot" aria-hidden="true">·</span>
-        <span>TRY · COMPARE · WRAP · GROUND</span>
-      </div>
-
-      <header class="section-heading section-heading--dark" data-reveal>
-        <h2 class="section-title" id="approach-title">My approach</h2>
-        <p class="section-sub">Try the next model. Compare it head-to-head. Build the harness when the tooling gets in the way. Ground every claim.</p>
-      </header>
-
-      <div class="practice-summary" data-reveal aria-label="Project scope and ways of working">
-        <div>
-          <span>Project types</span>
-          <strong>Inference · RAG · Agents · Evals · Hardware</strong>
-        </div>
-        <div>
-          <span>Project stages</span>
-          <strong>Try a new model → Compare → Wrap with the right harness</strong>
-        </div>
-        <div>
-          <span>Collaboration</span>
-          <strong>Independent lead · Hackathon teams · Co-builds</strong>
-        </div>
-      </div>
-
-      <div class="capability-grid">
-
-        <article class="capability-card" data-reveal>
-          <div class="capability-head">
-            <span>01.</span>
-            <span>Try / Compare</span>
-          </div>
-          <h3>Always trying the next model</h3>
-          <p>New open-weight releases, new agentic harnesses, new inference runtimes. I run them on the same real input and see what actually changes.</p>
-          <ul class="capability-methods" aria-label="Try / compare methods">
-            <li>Open-weight bench</li>
-            <li>Head-to-head</li>
-            <li>Notes on what breaks</li>
-          </ul>
-          <div class="capability-output">
-            <span>Typical output</span>
-            <strong>An honest comparison, not a screenshot</strong>
-          </div>
-        </article>
-
-        <article class="capability-card" data-reveal>
-          <div class="capability-head">
-            <span>02.</span>
-            <span>Build / Wrap</span>
-          </div>
-          <h3>Build the missing layer</h3>
-          <p>When the model's behavior is interesting but the surrounding tooling isn't, I write the harness, the eval, the agent loop, or the inference path that lets it actually do something.</p>
-          <ul class="capability-methods" aria-label="Build / wrap methods">
-            <li>Agent harnesses</li>
-            <li>Inference paths</li>
-            <li>Eval suites</li>
-          </ul>
-          <div class="capability-output">
-            <span>Typical output</span>
-            <strong>A working system the model can actually live in</strong>
-          </div>
-        </article>
-
-        <article class="capability-card" data-reveal>
-          <div class="capability-head">
-            <span>03.</span>
-            <span>Quantize / Distill</span>
-          </div>
-          <h3>Make the model fit the box</h3>
-          <p>Take a too-large or too-slow model and put it where it needs to run — GPTQ, AWQ, GGUF, knowledge distillation, custom kernels when the path is interesting.</p>
-          <ul class="capability-methods" aria-label="Quantize / distill methods">
-            <li>GPTQ / AWQ</li>
-            <li>GGUF / llama.cpp</li>
-            <li>Distillation</li>
-          </ul>
-          <div class="capability-output">
-            <span>Typical output</span>
-            <strong>The right model at the right cost on the right hardware</strong>
-          </div>
-        </article>
-
-        <article class="capability-card" data-reveal>
-          <div class="capability-head">
-            <span>04.</span>
-            <span>Ground / Loop</span>
-          </div>
-          <h3>Ground the claims</h3>
-          <p>Holdout design, anti-contamination canaries, deterministic harnesses, and numbers the code produces — not numbers I hand-typed.</p>
-          <ul class="capability-methods" aria-label="Ground / loop methods">
-            <li>Holdout sets</li>
-            <li>Regression gates</li>
-            <li>Auto-generated tables</li>
-          </ul>
-          <div class="capability-output">
-            <span>Typical output</span>
-            <strong>Eval results you can re-run and verify</strong>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="about-grid">
-
-        <article class="about-card" data-reveal>
-          <header class="card__label card__label--dark">
-            <span>BACKGROUND</span>
-            <span>@ISHESATOSHI</span>
-          </header>
-          <ul class="about-links" aria-label="Links">
-            <li><a href="https://github.com/isHeSatoshi" target="_blank" rel="noopener">github.com/isHeSatoshi</a></li>
-            <li><a href="mailto:ishesatoshi@gmail.com">ishesatoshi@gmail.com</a></li>
-            <li><a href="https://x.com/isHeSatoshi" target="_blank" rel="noopener">@isHeSatoshi</a></li>
-          </ul>
-          <dl class="about-facts">
-            <div><dt>Stack</dt><dd>PyTorch · HF · vLLM · PEFT · Open-weight models</dd></div>
-            <div><dt>Hardware</dt><dd>Raspberry Pi · ESP32 · Arduino · XMOS</dd></div>
-            <div><dt>Languages</dt><dd>Python · C++ · TypeScript · Rust (learning)</dd></div>
-          </dl>
-        </article>
-
-        <article class="about-card about-card--visual" data-reveal aria-label="The build loop">
-          <header class="card__label card__label--dark">
-            <span>PROCESS / 04</span>
-            <span>FROM BRIEF TO LOOP</span>
-          </header>
-          <div class="about-illustration">
-            <svg viewBox="0 0 360 340" class="scene-svg">
-              <defs>
-                <pattern id="loop-grid-d" width="20" height="20" patternUnits="userSpaceOnUse">
-                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#F2EBDD" stroke-width="0.3" opacity="0.18"/>
-                </pattern>
-                <marker id="loop-arr-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-                  <path d="M0 0 L10 5 L0 10 z" fill="#F2EBDD"/>
-                </marker>
-                <marker id="loop-arr-h-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-                  <path d="M0 0 L10 5 L0 10 z" fill="#5BAFA6"/>
-                </marker>
-              </defs>
-              <rect x="0" y="0" width="360" height="320" fill="url(#loop-grid-d)"/>
-              <!-- center -->
-              <circle cx="180" cy="160" r="120" fill="none" stroke="#F2EBDD" stroke-width="0.6" stroke-dasharray="3 6" opacity="0.6"/>
-              <!-- four nodes -->
-              <g transform="translate(180 60)">
-                <circle r="16" fill="#15171A" stroke="#F2EBDD" stroke-width="1.4"/>
-                <text y="-30" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#F2EBDD">RESEARCH</text>
-              </g>
-              <g transform="translate(280 160)">
-                <circle r="16" fill="#15171A" stroke="#F2EBDD" stroke-width="1.4"/>
-                <text x="32" y="3" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#F2EBDD">BUILD</text>
-              </g>
-              <g transform="translate(180 260)">
-                <circle r="16" fill="#15171A" stroke="#F2EBDD" stroke-width="1.4"/>
-                <text y="38" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#F2EBDD">MEASURE</text>
-              </g>
-              <g transform="translate(80 160)">
-                <circle r="20" fill="none" stroke="#5BAFA6" stroke-width="1.6"/>
-                <circle r="4" fill="#5BAFA6"/>
-                <text x="-30" y="40" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#5BAFA6">LOOP</text>
-              </g>
-              <!-- arcs -->
-              <path d="M 196 60 A 100 100 0 0 1 280 144" fill="none" stroke="#F2EBDD" stroke-width="1" marker-end="url(#loop-arr-d)" opacity="0.8"/>
-              <path d="M 280 176 A 100 100 0 0 1 196 260" fill="none" stroke="#F2EBDD" stroke-width="1" marker-end="url(#loop-arr-d)" opacity="0.8"/>
-              <path d="M 164 260 A 100 100 0 0 1 80 176" fill="none" stroke="#F2EBDD" stroke-width="1" marker-end="url(#loop-arr-d)" opacity="0.8"/>
-              <path d="M 80 144 A 100 100 0 0 1 164 60" fill="none" stroke="#5BAFA6" stroke-width="1.4" marker-end="url(#loop-arr-h-d)"/>
-              <!-- center text -->
-              <text x="180" y="155" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="2" fill="#F2EBDD" opacity="0.7">. 4 STAGES .</text>
-              <text x="180" y="172" text-anchor="middle" font-family="Fraunces, serif" font-size="20" font-variation-settings="'opsz' 144, 'SOFT' 30, 'WONK' 1" fill="#F2EBDD">the loop</text>
-              <!-- bottom caption -->
-            </svg>
-          </div>
-          <ol class="process-list" aria-label="Process steps">
-            <li><span>01</span><p>Try a new model or harness on a real input — never just slides</p></li>
-            <li><span>02</span><p>Compare architectures head-to-head on the same harness, same signal</p></li>
-            <li><span>03</span><p>Ground every claim — deterministic evals, anti-contamination, property tests</p></li>
-            <li><span>04</span><p>Build the missing layer when existing tooling gets in the model's way</p></li>
-          </ol>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============================================================
        CONTACT / FOOTER
        ============================================================ -->
   <footer class="page site-footer" id="contact" role="contentinfo">
@@ -1187,7 +958,6 @@
           <p class="footer-title">Quick links</p>
           <a href="#top">Back to top <span aria-hidden="true" class="arrow">→</span></a>
           <a href="#work">Projects <span aria-hidden="true" class="arrow">→</span></a>
-          <a href="#my-approach">Approach <span aria-hidden="true" class="arrow">→</span></a>
           <a href="resume.html">Resume <span aria-hidden="true" class="arrow">→</span></a>
         </section>
         <section class="footer-card">
@@ -1202,7 +972,7 @@
             <span>Guild</span><b>Factory Ambassador</b>
           </a>
           <a class="footer-action" href="https://x.com/isHeSatoshi" target="_blank" rel="noopener">
-            <span>X</span><b>@isHeSatoshi</b>
+            <span>Twitter</span><b>@isHeSatoshi</b>
           </a>
           <a class="footer-action" href="resume.html">
             <span>CV</span><b>View resume</b>
