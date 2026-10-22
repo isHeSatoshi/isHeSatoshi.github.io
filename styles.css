@@ -37,6 +37,7 @@
   --ease:         cubic-bezier(0.65, 0, 0.35, 1);
   --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in:      cubic-bezier(0.6, 0, 0.7, 0.2);
+  --nav-bg:       rgba(242, 235, 221, 0.86);
 
   --maxw:         1280px;
   --shell-pad-x:  40px;
@@ -94,7 +95,7 @@ body.is-loaded  { opacity: 1; transition: opacity 500ms var(--ease) 80ms; }
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(242, 235, 221, 0.86);
+  background: var(--nav-bg);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--rule);
 }
@@ -231,7 +232,7 @@ body.is-loaded  { opacity: 1; transition: opacity 500ms var(--ease) 80ms; }
   pointer-events: none;
   transition: border-color 280ms var(--ease);
 }
-.card:hover { border-color: rgba(21, 23, 26, 0.32); }
+.card:hover { border-color: var(--rule-strong); }
 .card:hover::before { border-color: var(--signal); }
 .card:hover { transform: translateY(-2px); }
 
@@ -780,6 +781,7 @@ svg [stroke="#5BAFA6"] { stroke: var(--dg-signal-2); }
   --dark-rule-soft:  rgba(237, 230, 215, 0.06);
   --dark-ink:        #EDE6D7;
   --dark-mute:       #9C9484;
+  --nav-bg:          rgba(19, 21, 24, 0.86);
 }
 
 [data-theme="ink"] body {
