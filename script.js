@@ -107,4 +107,66 @@
   }
   */
 
+  // 5. THEME + HERO FILMS ---------------------------------------
+  // The portrait square and the CV band each hold an SVG (poster + reduced-
+  // motion fallback) with a looping film stacked exactly on top. A film is
+  // revealed only once it can actually play, and removed entirely if it
+  // fails, so the page never shows a dead box. The band has a light and a
+  // dark cut, so flipping the theme swaps the source and restarts it.
+  const root = document.documentElement;
+  const themeBtn = document.querySelector('[data-theme-toggle]');
+  const THEME_KEY = 'ishesatoshi-theme';
+  const themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function currentTheme() {
+    let saved = null;
+    try { saved = localStorage.getItem(THEME_KEY); } catch (e) { /* private mode */ }
+    if (saved === 'ink' || saved === 'paper') return saved;
+    return themeMedia.matches ? 'ink' : 'paper';
+  }
+
+  function armFilm(v) {
+    const reveal = () => v.classList.add('is-ready');
+    const fail = () => v.remove();
+    if (v.readyState >= 3) { reveal(); return; }
+    v.addEventListener('canplay', reveal, { once: true });
+    v.addEventListener('error', fail, { once: true });
+  }
+
+  function applyTheme(mode) {
+    root.setAttribute('data-theme', mode);
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', mode === 'ink' ? '#131518' : '#F2EBDD');
+    if (themeBtn) {
+      themeBtn.textContent = mode === 'ink' ? 'PAPER' : 'INK';
+      themeBtn.setAttribute('aria-pressed', mode === 'ink' ? 'true' : 'false');
+      themeBtn.setAttribute('aria-label',
+        mode === 'ink' ? 'Switch to the light theme' : 'Switch to the dark theme');
+    }
+    document.querySelectorAll('video[data-film]').forEach((v) => {
+      const light = v.dataset.srcLight;
+      const dark = v.dataset.srcDark;
+      // a film with only a light cut keeps it in both themes
+      const wantSrc = dark ? (mode === 'ink' ? dark : light) : light;
+      const wantPoster = mode === 'ink' ? v.dataset.posterDark : v.dataset.posterLight;
+      if (wantSrc && v.getAttribute('src') !== wantSrc) {
+        v.setAttribute('src', wantSrc);
+        if (wantPoster) v.setAttribute('poster', wantPoster);
+        v.classList.remove('is-ready');
+        v.load();
+      }
+      armFilm(v);
+    });
+  }
+
+  applyTheme(currentTheme());
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'ink' ? 'paper' : 'ink';
+      try { localStorage.setItem(THEME_KEY, next); } catch (e) { /* ignore */ }
+      applyTheme(next);
+    });
+  }
+
 })();

@@ -252,10 +252,30 @@ body.is-loaded  { opacity: 1; transition: opacity 500ms var(--ease) 80ms; }
 
 /* card 01 · identity */
 .card--identity { grid-column: span 6; }
-.identity { display: grid; grid-template-columns: 168px 1fr; gap: 30px; flex: 1; }
-.identity__scene { margin: 0; align-self: start; }
+.identity { display: grid; grid-template-columns: clamp(260px, 24vw, 340px) 1fr; gap: 30px; flex: 1; }
+.identity__scene { margin: 0; align-self: start; position: relative; background: var(--paper-3); isolation: isolate; }
 .scene-svg { width: 100%; height: auto; }
 .identity__copy { display: flex; flex-direction: column; gap: 14px; }
+
+/* Hero film — sits exactly on top of the portrait square, same footprint.
+   The film's cream is colour-matched to the CARD it sits on (--paper-3,
+   #F8F3E6) at encode time, so it dissolves into the card with no visible
+   edge and the drawn sheet reads as ink directly on the page. It is
+   deliberately opaque: the SVG beneath stays as the poster and the
+   reduced-motion fallback, and the film covers it cleanly instead of
+   blending with it. */
+.identity__film {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 700ms var(--ease);
+  pointer-events: none;
+}
+.identity__film.is-ready { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .identity__film { display: none; } }
 .identity__copy h1 {
   font-family: var(--ff-display);
   font-variation-settings: 'opsz' 144, 'SOFT' 30, 'WONK' 1;
@@ -332,9 +352,29 @@ body.is-loaded  { opacity: 1; transition: opacity 500ms var(--ease) 80ms; }
 }
 .identity-links a:hover { color: var(--signal); border-bottom-color: var(--signal); }
 
-/* card 02 · CV */
-.card--cv { grid-column: span 6; }
+/* card 02 · CV
+   The card is a wide band. A looping film of the site's own instrument
+   drawings sits behind it as the card surface; the paper tone is matched to
+   --paper-3 at encode time so the film dissolves into the card with no edge.
+   The band's lower third is deliberately empty paper, which is where the
+   RESUME / CV block and the button sit. */
+.card--cv { grid-column: span 6; min-height: 300px; overflow: hidden; }
+.cv__film {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  opacity: 0;
+  transition: opacity 700ms var(--ease);
+  pointer-events: none;
+}
+.cv__film.is-ready { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .cv__film { display: none; } }
 .cv__body {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -524,19 +564,22 @@ body.is-loaded  { opacity: 1; transition: opacity 500ms var(--ease) 80ms; }
   padding-top: 6px;
 }
 
-/* 12. ALL-WORK BRIDGE CARD ------------------------------------ */
+/* 12. ALL-WORK BRIDGE CARD ------------------------------------
+   Uses the --dark family rather than --ink/--paper so it stays a dark
+   panel when the page itself flips to ink. In the light theme the two
+   families are identical, so this is a no-op there. */
 .all-work-card {
   display: grid;
   grid-template-columns: 1.05fr 1fr;
   gap: 36px;
   margin: 28px 0 0;
   padding: 36px;
-  background: var(--ink);
-  color: var(--paper);
-  border: 1px solid var(--ink);
+  background: var(--dark);
+  color: var(--dark-ink);
+  border: 1px solid var(--dark);
   transition: background 260ms var(--ease);
 }
-.all-work-card:hover { background: var(--signal); border-color: var(--signal); }
+.all-work-card:hover { background: var(--signal); border-color: var(--signal); color: var(--paper); }
 .all-work-card .micro-copy { color: var(--ink-faint); }
 .work-bridge__copy { display: flex; flex-direction: column; gap: 14px; }
 .work-bridge__copy strong {
@@ -546,7 +589,7 @@ body.is-loaded  { opacity: 1; transition: opacity 500ms var(--ease) 80ms; }
   line-height: 1.06;
   letter-spacing: -0.018em;
   font-weight: 400;
-  color: var(--paper);
+  color: var(--dark-ink);
 }
 .work-bridge__copy strong .arrow { transition: transform 280ms var(--ease); }
 .all-work-card:hover .work-bridge__copy strong .arrow { transform: translateX(6px); }
@@ -687,6 +730,84 @@ body.is-loaded  { opacity: 1; transition: opacity 500ms var(--ease) 80ms; }
 .site-footer [data-reveal].reveal:nth-of-type(1) { animation-delay: 100ms; }
 .site-footer [data-reveal].reveal:nth-of-type(2) { animation-delay: 180ms; }
 
+/* ================================================================
+   15b. DARK THEME ---------------------------------------------
+   The palette was already tokenised. The only thing that was hard
+   coded was the 215 literal hex values inside the nine inline
+   diagram SVGs — those are re-pointed at theme variables with
+   attribute selectors, so every diagram inverts with the page and
+   the markup never had to change.
+   ================================================================ */
+
+:root {
+  --dg-ink: var(--ink);
+  --dg-signal: var(--signal);
+  --dg-paper: var(--paper);
+  --dg-signal-2: var(--signal-2);
+}
+
+svg [fill="#15171A"]   { fill: var(--dg-ink); }
+svg [stroke="#15171A"] { stroke: var(--dg-ink); }
+svg [fill="#0E5E5A"]   { fill: var(--dg-signal); }
+svg [stroke="#0E5E5A"] { stroke: var(--dg-signal); }
+svg [fill="#F2EBDD"]   { fill: var(--dg-paper); }
+svg [stroke="#F2EBDD"] { stroke: var(--dg-paper); }
+svg [fill="#5BAFA6"]   { fill: var(--dg-signal-2); }
+svg [stroke="#5BAFA6"] { stroke: var(--dg-signal-2); }
+
+/* the bridge card is drawn for a dark ground in both themes */
+.work-bridge__art { --dg-paper: var(--dark-ink); --dg-signal: var(--signal-2); }
+
+[data-theme="ink"] {
+  --paper:           #131518;
+  --paper-2:         #1A1D21;
+  --paper-3:         #17191D;
+  --paper-edge:      #24272C;
+  --ink:             #EDE6D7;
+  --ink-2:           #D9D2C3;
+  --ink-3:           #B4AD9B;
+  --ink-mute:        #8E8777;
+  --ink-faint:       #79736A;
+  --rule:            rgba(237, 230, 215, 0.14);
+  --rule-soft:       rgba(237, 230, 215, 0.07);
+  --rule-strong:     rgba(237, 230, 215, 0.32);
+  --signal:          #5BAFA6;
+  --signal-2:        #8AD2C9;
+  --signal-warm:     #C9784F;
+  --dark:            #0C0E10;
+  --dark-2:          #111316;
+  --dark-rule:       rgba(237, 230, 215, 0.12);
+  --dark-rule-soft:  rgba(237, 230, 215, 0.06);
+  --dark-ink:        #EDE6D7;
+  --dark-mute:       #9C9484;
+}
+
+[data-theme="ink"] body {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(237, 230, 215, 0.05) 1px, transparent 0);
+}
+
+/* In the ink theme the portrait film is a cream sheet on a dark board rather
+   than paper on paper. A hairline mount makes that a deliberate print instead
+   of an unthemed white block. */
+[data-theme="ink"] .identity__scene {
+  box-shadow: 0 0 0 1px rgba(237, 230, 215, 0.20);
+}
+
+.nav__theme {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border: 1px solid var(--rule-strong);
+  background: transparent;
+  padding: 7px 12px;
+  cursor: pointer;
+  transition: border-color 200ms var(--ease), color 200ms var(--ease), background 200ms var(--ease);
+}
+.nav__theme:hover { border-color: var(--signal); color: var(--signal); }
+
 /* 16. RESPONSIVE ---------------------------------------------- */
 @media (max-width: 1100px) {
   :root { --shell-pad-x: 28px; --shell-pad-y: 72px; }
@@ -723,6 +844,18 @@ body.is-loaded  { opacity: 1; transition: opacity 500ms var(--ease) 80ms; }
   .nav__pill { font-size: 10px; padding: 6px 10px; gap: 8px; }
   .card { padding: 18px 18px 16px; }
   .cv__word { font-size: 48px; }
+  /* The band is 4:1; on a narrow card a cover crop would blow the drawings up
+     to the size of the button. Drop it below the content as a full-bleed
+     strip instead, where it keeps its own proportions. */
+  .card--cv { min-height: 0; }
+  .cv__film {
+    position: static;
+    order: 2;
+    width: calc(100% + 36px);
+    height: 92px;
+    margin: 20px -18px -16px;
+    object-fit: cover;
+  }
   .identity__copy h1 { font-size: 28px; }
   .preview__note p { font-size: 16px; }
   .preview__bottom { flex-direction: column; align-items: flex-start; gap: 8px; }

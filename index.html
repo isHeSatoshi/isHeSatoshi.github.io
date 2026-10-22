@@ -14,6 +14,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,0..100,0..1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Set the theme before first paint so the page never flashes the wrong
+       surface. The same rule is applied again by script.js, which owns the
+       toggle and the persisted choice. -->
+  <script>
+    (function () {
+      var k = 'ishesatoshi-theme', s = null;
+      try { s = localStorage.getItem(k); } catch (e) {}
+      var m = window.matchMedia('(prefers-color-scheme: dark)');
+      var t = (s === 'ink' || s === 'paper') ? s : (m.matches ? 'ink' : 'paper');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body class="is-loading">
 
@@ -34,6 +47,7 @@
         <a href="#work">Projects</a>
         <a href="resume.html">Resume</a>
         <a href="#contact">Contact</a>
+        <button class="nav__theme" type="button" data-theme-toggle aria-pressed="false">INK</button>
       </nav>
     </div>
   </header>
@@ -100,6 +114,13 @@
                 </g>
                 <!-- Coordinate -->
               </svg>
+              <!-- Hero film · the portrait steps out of its own frame.
+                   The SVG above stays as poster and reduced-motion fallback. -->
+              <video class="identity__film" data-film
+                     data-src-light="assets/film/portrait.mp4"
+                     data-poster-light="assets/film/portrait.jpg"
+                     autoplay muted loop playsinline preload="auto"
+                     disablepictureinpicture></video>
             </figure>
             <div class="identity__copy">
               <p class="micro-copy">@ISHESATOSHI · BENGALURU, IN</p>
@@ -131,6 +152,13 @@
 
         <!-- 02 / CV -->
         <article class="card card--cv" data-reveal>
+          <video class="cv__film" data-film
+                 data-src-light="assets/film/band-paper.mp4"
+                 data-src-dark="assets/film/band-ink.mp4"
+                 data-poster-light="assets/film/band-paper.jpg"
+                 data-poster-dark="assets/film/band-ink.jpg"
+                 autoplay muted loop playsinline preload="auto"
+                 disablepictureinpicture aria-hidden="true"></video>
           <div class="cv__body">
             <div>
               <p class="micro-copy">RESUME</p>
