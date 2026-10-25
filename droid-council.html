@@ -254,7 +254,7 @@ npm run council -- "Build a Python package named textstat with exactly six indep
 
         <p data-reveal>For a task this size, one droid won. The council at concurrency 16 produced slightly more tests, and it was slower and roughly 8x more expensive. The concurrency 6 run was worse on every axis.</p>
 
-        <p data-reveal>The reason is a fixed per-droid cost. Every droid pays a session init of 30 to 60 seconds before doing any work, so wall clock is roughly <code>(droids / concurrency) × init + actual work</code>. With 46 droids that startup term dominates completely. The event log shows the shape: at concurrency 16 the thirteen workers all started within about 200 ms of each other and finished as one solid block, while at concurrency 6 they came out as a staircase with six running at a time. Moving from 6 to 16 cut wall clock by 38% with no other change.</p>
+        <p data-reveal>The reason is a fixed per-droid cost. Every droid pays a session init of 30 to 60 seconds before doing any work, so wall clock is roughly <code>(droids / concurrency) × init + actual work</code>. With 46 droids that startup term dominates completely. The event log shows the shape: at concurrency 16 the thirteen workers all started within about 30 ms of each other and finished as one solid block, while at concurrency 6 they came out as a staircase with six running at a time. Moving from 6 to 16 cut wall clock by 38% with no other change.</p>
 
         <p data-reveal>Concurrency is the first knob to turn, not the last. A council pays off when the work exceeds one context window: a repo-wide audit, 500 files to classify, many large independent workstreams. Splitting a task one droid can hold only adds startup cost.</p>
 
