@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F2EBDD" />
+  <title>Running a council of droids on the Factory Droid SDK — @isHeSatoshi</title>
+  <meta name="description" content="What a council of droids costs: 261 seconds, 10,311 credits and 57 passing tests for one droid, against 391 seconds, 82,550 credits and 60 tests for a council of 46 at concurrency 16." />
+
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F2EBDD'/><circle cx='16' cy='16' r='9' fill='none' stroke='%2315171A' stroke-width='1.2'/><circle cx='16' cy='16' r='2.4' fill='%230E5E5A'/><line x1='16' y1='2' x2='16' y2='30' stroke='%2315171A' stroke-width='0.5'/><line x1='2' y1='16' x2='30' y2='16' stroke='%2315171A' stroke-width='0.5'/></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,0..100,0..1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* =========================================================
+         ARTICLE · long form, tokens only so both themes hold
+         ========================================================= */
+    .article { max-width: 780px; margin: 0 auto; }
+
+    .article h1 {
+      font-family: var(--ff-display);
+      font-variation-settings: 'opsz' 144, 'SOFT' 30, 'WONK' 1;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+      font-weight: 400;
+      color: var(--ink);
+      margin: 0 0 22px;
+    }
+
+    .article__lede {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--ink-2);
+      margin: 0 0 52px;
+      max-width: 64ch;
+    }
+
+    .article h2 {
+      font-family: var(--ff-display);
+      font-variation-settings: 'opsz' 144, 'SOFT' 30, 'WONK' 1;
+      font-size: clamp(24px, 3vw, 33px);
+      line-height: 1.14;
+      letter-spacing: -0.018em;
+      font-weight: 400;
+      color: var(--ink);
+      margin: 52px 0 18px;
+      padding-top: 26px;
+      border-top: 1px solid var(--rule-soft);
+    }
+
+    .article p {
+      font-size: 16px;
+      line-height: 1.68;
+      color: var(--ink-2);
+      margin: 0 0 20px;
+    }
+
+    .article ol, .article ul { margin: 0 0 24px; padding-left: 22px; }
+
+    .article li {
+      font-size: 16px;
+      line-height: 1.66;
+      color: var(--ink-2);
+      margin-bottom: 12px;
+    }
+
+    .article a {
+      color: var(--signal);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      transition: text-decoration-thickness 200ms var(--ease);
+    }
+    .article a:hover { text-decoration-thickness: 2px; }
+
+    .article code {
+      font-family: var(--ff-mono);
+      font-size: 13px;
+      background: var(--paper-2);
+      border: 1px solid var(--rule-soft);
+      padding: 1px 5px;
+      border-radius: 3px;
+      color: var(--ink-2);
+    }
+
+    .article pre {
+      background: var(--paper-3);
+      border: 1px solid var(--rule);
+      padding: 18px 20px;
+      overflow-x: auto;
+      margin: 0 0 26px;
+    }
+    .article pre code {
+      background: none;
+      border: 0;
+      padding: 0;
+      font-size: 12.5px;
+      line-height: 1.6;
+      white-space: pre;
+    }
+
+    .article table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 6px 0 28px;
+      font-size: 14.5px;
+    }
+    .article th, .article td {
+      text-align: left;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--rule-soft);
+      vertical-align: top;
+    }
+    .article th {
+      font-family: var(--ff-mono);
+      font-size: 10.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      font-weight: 400;
+    }
+    .article td { color: var(--ink-2); }
+    .article td:first-child { color: var(--ink); }
+
+    .article figure { margin: 30px 0 34px; }
+    .article figure img {
+      width: 100%;
+      border: 1px solid var(--rule);
+      background: var(--paper-3);
+    }
+    .article figcaption {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-top: 12px;
+    }
+
+    .article__source {
+      margin-top: 54px;
+      padding-top: 22px;
+      border-top: 1px solid var(--rule);
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink-mute);
+    }
+  </style>
+
+  <!-- Set the theme before first paint so the page never flashes the wrong
+       surface. The same rule is applied again by script.js, which owns the
+       toggle and the persisted choice. -->
+  <script>
+    (function () {
+      var k = 'ishesatoshi-theme', s = null;
+      try { s = localStorage.getItem(k); } catch (e) {}
+      var m = window.matchMedia('(prefers-color-scheme: dark)');
+      var t = (s === 'ink' || s === 'paper') ? s : (m.matches ? 'ink' : 'paper');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body class="is-loading">
+
+  <a class="skip-link" href="#post">Skip to the article</a>
+
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a class="nav__pill" href="index.html#top" aria-label="Back to the home page">
+        <span class="nav__name">@isHeSatoshi</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary navigation">
+        <a href="index.html#work">Projects</a>
+        <a href="droid-council.html" aria-current="page">Writing</a>
+        <a href="resume.html">Resume</a>
+        <a href="index.html#contact">Contact</a>
+        <button class="nav__theme" type="button" data-theme-toggle aria-pressed="false">INK</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="post">
+    <div class="page__shell">
+
+      <article class="article">
+
+        <div class="kicker" data-reveal>
+          <span>WRITING</span>
+          <span class="kicker__dot" aria-hidden="true">·</span>
+          <span>25 OCTOBER 2026</span>
+        </div>
+
+        <h1 data-reveal>Running a council of droids on the Factory Droid SDK</h1>
+
+        <p class="article__lede" data-reveal>I built an orchestrator that decomposes a task into independent pieces, runs the pieces in parallel and merges the findings, on top of the Factory Droid TypeScript SDK. Measured against the same task on the same model, one droid beat it: 261 seconds, 10,311 credits and 57 passing tests, against 391 seconds, 82,550 credits and 60 tests for the council at concurrency 16. The cost model behind that result is the part worth publishing.</p>
+
+        <h2 data-reveal>What the council actually is</h2>
+
+        <p data-reveal>Everything runs in one TypeScript process, <code>council.ts</code>, and one droid is one SDK <code>run()</code> call. Work happens in three phases. EXPAND walks the task breadth first and asks planner droids to split it into subtasks, then writes the plan to disk. EXECUTE drains the leaf queue through a fixed worker pool. REDUCE walks back up level by level, where a judge droid merges each node's children into one result.</p>
+
+        <p data-reveal>Three roles carry the system. A <code>planner</code> splits one task into subtasks and is read only. A <code>worker</code> does one leaf task and owns only its own files. A <code>judge</code> merges reports into one authoritative answer.</p>
+
+        <p data-reveal>Three invariants make it safe to scale.</p>
+
+        <ol data-reveal>
+          <li>Droids never spawn droids. The orchestrator spawns, so one process owns every node and a single counter bounds the whole tree.</li>
+          <li>The semaphore wraps the SDK call, never the recursion. A parent holding a concurrency slot while awaiting its children deadlocks at depth 2 or deeper, since every slot would be held by a waiting parent and none left for the child it waits on.</li>
+          <li>Decomposition is separated from execution. Expand writes a plan, execute drains a flat queue, reduce walks back up. No parent blocks a child.</li>
+        </ol>
+
+        <p data-reveal>The second one is the bug I would have shipped: the obvious implementation puts the <code>await</code> on the semaphore around the whole recursive call, so every parent holds a slot while waiting for a child that cannot get one.</p>
+
+        <h2 data-reveal>Setting it up and running it</h2>
+
+        <p data-reveal>The SDK needs its own key. A working <code>droid exec</code> login is not enough, so the key goes in a <code>.env</code> file at the repo root, which the npm scripts load with <code>--env-file-if-exists</code>:</p>
+
+        <pre data-reveal><code>npm install
+echo "FACTORY_API_KEY=fk-..." &gt; .env
+npm run council -- "Build a Python package named textstat with exactly six independent modules, each with its own pytest test file: slugify.py, wordcount.py, truncate.py, normalize_ws.py, titlecase.py, strip_html.py. Add an __init__.py. No cross-imports between modules. Then run py -m pytest -q and report the exact pass and fail counts." --concurrency 16 --models glm-5.3-flash --cwd runs/team-fast --label team-fast</code></pre>
+
+        <p data-reveal>That last line is the measured run: 13 leaves at concurrency 16.</p>
+
+        <p data-reveal>Three knobs decide the shape of a council. <code>--leaves N</code> caps leaf tasks and is the real size control. <code>--concurrency N</code> sets how many droids run at once. <code>--agents N</code> is a hard ceiling on total droid runs, a budget rather than a target. <code>--depth</code> and <code>--fanout</code> control how eagerly the tree splits. <code>--plan-only</code> runs the planners and stops, printing the node count, the leaf count and an estimated droid spend.</p>
+
+        <p data-reveal>Every run writes its artifacts to <code>--cwd</code>, <code>runs/&lt;timestamp&gt;/</code> by default. <code>plan.json</code> holds the node tree, <code>board.md</code> is the shared blackboard, <code>answer.md</code> is the merged result, and <code>report.json</code> records droids used, tokens, credits, duration and failures. <code>events.jsonl</code> is one JSON line per lifecycle event, each carrying elapsed milliseconds, the run label and a <code>kind</code> such as <code>start</code>, <code>spawn</code>, <code>done</code>, <code>split</code>, <code>merge</code>, <code>board</code> or <code>covert</code>, plus fields such as <code>role</code>, <code>model</code>, <code>ms</code> and <code>inTok</code>. <code>npm run ui</code> replays any run from that file.</p>
+
+        <p data-reveal>One setup trap matters, because the symptom points elsewhere. The SDK and <code>@factory/cli</code> have to agree on a JSON-RPC protocol version. A stale CLI rejects session init, and the only visible effect is a 60 second timeout on every droid, indistinguishable from slow work. <code>council.ts</code> checks the CLI version at startup and refuses to run.</p>
+
+        <h2 data-reveal>What it cost</h2>
+
+        <p data-reveal>Same task, same model (<code>glm-5.3-flash</code> at high reasoning), six modules with a pytest file each. Test counts were independently re-verified by running pytest afterwards.</p>
+
+        <table data-reveal>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Single droid</th>
+              <th>Council at concurrency 6</th>
+              <th>Council at concurrency 16</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Wall clock</td><td>261s</td><td>631s</td><td>391s</td></tr>
+            <tr><td>Droids</td><td>1</td><td>44</td><td>46</td></tr>
+            <tr><td>Credits</td><td>10,311</td><td>96,094</td><td>82,550</td></tr>
+            <tr><td>Tests passing</td><td>57</td><td>51</td><td>60</td></tr>
+          </tbody>
+        </table>
+
+        <p data-reveal>For a task this size, one droid won. The council at concurrency 16 produced slightly more tests, and it was slower and roughly 8x more expensive. The concurrency 6 run was worse on every axis.</p>
+
+        <p data-reveal>The reason is a fixed per-droid cost. Every droid pays a session init of 30 to 60 seconds before doing any work, so wall clock is roughly <code>(droids / concurrency) × init + actual work</code>. With 46 droids that startup term dominates completely. The event log shows the shape: at concurrency 16 the thirteen workers all started within about 200 ms of each other and finished as one solid block, while at concurrency 6 they came out as a staircase with six running at a time. Moving from 6 to 16 cut wall clock by 38% with no other change.</p>
+
+        <p data-reveal>Concurrency is the first knob to turn, not the last. A council pays off when the work exceeds one context window: a repo-wide audit, 500 files to classify, many large independent workstreams. Splitting a task one droid can hold only adds startup cost.</p>
+
+        <p data-reveal>Two details make the cost legible: <code>disableBuiltinSkills: true</code> on the SDK call shortens every session init, and <code>--agents</code> is a hard stop, so once the budget is spent the remaining leaves execute directly instead of failing.</p>
+
+        <figure data-reveal>
+          <a href="https://github.com/isHeSatoshi/droid-council/blob/main/docs/comparison.png"><img src="https://raw.githubusercontent.com/isHeSatoshi/droid-council/main/docs/comparison.png" alt="Bar chart comparing one droid against a council at concurrency 6 and at concurrency 16, by wall clock, droids and credits" /></a>
+          <figcaption>One droid against a council of 44 and a council of 46</figcaption>
+        </figure>
+
+        <p data-reveal>The chart in <a href="https://github.com/isHeSatoshi/droid-council/blob/main/docs/comparison.png"><code>docs/comparison.png</code></a> uses three colours: purple planners, green workers, amber judges.</p>
+
+        <p data-reveal>Both films are rendered from the real event logs, and the thirteen worker bars in the Loom cut are the real per-worker durations read out of <a href="https://github.com/isHeSatoshi/droid-council/blob/main/runs/team-fast/events.jsonl"><code>runs/team-fast/events.jsonl</code></a>. <a href="https://github.com/isHeSatoshi/droid-council/blob/main/loom/renders/droid-council-loom.mp4"><code>loom/renders/droid-council-loom.mp4</code></a> runs 60 s; <a href="https://github.com/isHeSatoshi/droid-council/blob/main/video/renders/droid-council-sheet.mp4"><code>video/renders/droid-council-sheet.mp4</code></a> runs 48.6 s and draws the same thirteen tasks as work done rather than wall clock. <code>npx tsx export.ts</code> writes a self-contained <code>council-report.html</code> that opens from disk with no server.</p>
+
+        <h2 data-reveal>How the droids talked to each other</h2>
+
+        <p data-reveal>Information moves in two directions. Upward, every node returns a report to its parent, and judges are told to reconcile contradictions by naming a winner rather than averaging. Sideways, siblings share <code>board.md</code>, append only, read before write.</p>
+
+        <p data-reveal>That sideways channel did real work in the measured run. The worker owning <code>strip_html.py</code> shipped a module with the <code>text = html</code> initialisation line missing, so it raised <code>UnboundLocalError</code>. The test worker hit 0 of 7 and posted that to the board. The module's owner read it, fixed the line, and wrote back that the seven tests should now pass. The judge's final report names that fix, and the suite finished at 60 passed.</p>
+
+        <p data-reveal>No message bus, no vector store, no shared memory service. A file and a return value covered what needed to move.</p>
+
+        <h2 data-reveal>A third channel, through the hardware</h2>
+
+        <p data-reveal><code>channel/</code> holds a working covert channel between two isolated processes on one host, unrelated to the droids. The receiver reads no file the sender wrote and opens no socket; what the two processes share is the silicon underneath them. The sender streams a 64 MB buffer from eight processes at once, evicting the 25.6 MB L3 of an i7-12700K, and the receiver times a dependent-load walk over a 4 MB buffer that would otherwise sit in that cache. While the hammers run the buffer is gone and the walk slows down. One slot becomes one bit.</p>
+
+        <p data-reveal>Four candidates were measured before one held up. Raw DRAM throughput contention separated by 1.02x, no signal at all. Per-slot minimum walk latency gave a bit error rate of 0.50, because the receiver's own walking re-warms the cache faster than a 50 ms burst can evict it. A single hammer process was unreliable, 0.09 on one run and 0.38 on an identical later run. Streaming hammers with a lower-half-mean statistic separated by about 1.45x, and that is the one that works.</p>
+
+        <p data-reveal>With 8 hammers, 100 ms slots, 5 slots per bit and 4 data bits per pilot block on that machine, the per-block level separation was 1.45x mean and 1.15x worst, six of eight single frames of 4 bytes decoded clean, and the payload rate was 1.11 bit/s, which is 32 payload bits inside 28.8 s. <code>npx tsx channel/channel.ts bench --trials 8</code> measures the rate on your own machine, and <code>--covert</code> runs the relay as a phase before the council starts, writing the bytes sent and recovered into <code>events.jsonl</code>. The honest limits: about 1 bit/s, so a token or a digest rather than a conversation, and both sides must agree on a wall-clock start time out of band.</p>
+
+        <h2 data-reveal>What I would do differently</h2>
+
+        <p data-reveal>Next time I would widen concurrency before adding leaves, and I would start every new task shape with <code>--mode single</code> to keep an honest baseline.</p>
+
+        <p data-reveal>The reason is the init bill. Every droid pays it whether or not it does interesting work, so a council of 46 droids on a task one droid can hold is 45 units of pure overhead.</p>
+
+        <p data-reveal>The remaining gaps are checkpoint and resume for a half-finished council, retry with backoff on rate limits, and cross-machine distribution. None of them change the three invariants.</p>
+
+        <p class="article__source" data-reveal>Code, run logs and both films are in <a href="https://github.com/isHeSatoshi/droid-council">github.com/isHeSatoshi/droid-council</a>. The three runs behind the table are published as <a href="https://github.com/isHeSatoshi/droid-council/blob/main/runs/cmp-single/report.json"><code>runs/cmp-single/report.json</code></a>, <a href="https://github.com/isHeSatoshi/droid-council/blob/main/runs/team/report.json"><code>runs/team/report.json</code></a> and <a href="https://github.com/isHeSatoshi/droid-council/blob/main/runs/team-fast/report.json"><code>runs/team-fast/report.json</code></a>, so every number in the table can be checked against the run that produced it.</p>
+
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="page site-footer" id="contact" role="contentinfo">
+    <div class="page__shell">
+
+      <section class="contact-card" aria-labelledby="contact-title" data-reveal>
+        <div>
+          <p class="micro-copy">CONTACT</p>
+          <h2 id="contact-title">Get in touch</h2>
+        </div>
+        <a class="btn btn--primary btn--lg" href="mailto:ishesatoshi@gmail.com">Email <span aria-hidden="true" class="arrow">→</span></a>
+      </section>
+
+      <div class="footer-grid" data-reveal>
+        <section class="footer-card">
+          <p class="footer-title">Quick links</p>
+          <a href="#post">Back to top <span aria-hidden="true" class="arrow">→</span></a>
+          <a href="index.html#work">Projects <span aria-hidden="true" class="arrow">→</span></a>
+          <a href="droid-council.html">Writing <span aria-hidden="true" class="arrow">→</span></a>
+          <a href="resume.html">Resume <span aria-hidden="true" class="arrow">→</span></a>
+        </section>
+        <section class="footer-card">
+          <p class="footer-title">Contact &amp; resources</p>
+          <a class="footer-action" href="mailto:ishesatoshi@gmail.com">
+            <span>Email</span><b>ishesatoshi@gmail.com</b>
+          </a>
+          <a class="footer-action" href="https://github.com/isHeSatoshi" target="_blank" rel="noopener">
+            <span>GitHub</span><b>/isHeSatoshi</b>
+          </a>
+          <a class="footer-action" href="https://factory.ai/ambassador" target="_blank" rel="noopener">
+            <span>Guild</span><b>Factory Ambassador</b>
+          </a>
+          <a class="footer-action" href="https://x.com/isHeSatoshi" target="_blank" rel="noopener">
+            <span>Twitter</span><b>@isHeSatoshi</b>
+          </a>
+          <a class="footer-action" href="resume.html">
+            <span>CV</span><b>View resume</b>
+          </a>
+        </section>
+        <section class="footer-card">
+          <p class="footer-title">Last updated</p>
+          <p>October 2026</p>
+          <span>© 2026 @ISHESATOSHI · BENGALURU, IN</span>
+        </section>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
