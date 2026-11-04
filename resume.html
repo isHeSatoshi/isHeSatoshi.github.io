@@ -556,7 +556,7 @@
         <p class="row__date">2026</p>
       </div>
       <ul class="bullets">
-        <li>Built SmallJev, an open-source 2.5B-parameter variant of TypeSafe's Jev, designed to bring Jev-like intelligence to consumer hardware. Designed a span-pooled semantic scoring architecture with one forward pass and zero generated tokens, targeting devices from an RTX 4060 to Raspberry Pi 5 and phones. Ranked #7 on JevBench with 68.5/100, competing against models up to 35B parameters.</li>
+        <li>Built SmallJev, an open-source 2.5B-parameter variant of TypeSafe's Jev, designed to bring Jev-like intelligence to consumer hardware. Designed a span-pooled semantic scoring architecture with one forward pass and zero generated tokens, targeting devices from an RTX 4060 to Raspberry Pi 5 and phones. Scores 65.53/100 on 231 of 534 public JevBench v1.2 items, measured locally on a 16 GB RTX 4060 Ti; the JevBench maintainers confirmed the submission and published it on their board: https://benchmarkheaven.com/jev-models/smalljev.</li>
       </ul>
 
       <div class="row">
@@ -567,7 +567,7 @@
         <p class="row__date">2024</p>
       </div>
       <ul class="bullets">
-        <li>Solved the problem of businesses struggling to navigate huge BIS standards documents by building a natural-language RAG system that maps product descriptions and questions to the relevant IS codes. Achieved 98% Hit Rate@3, 86% Hit Rate@1, 0.939 MRR@5, and ~1.1s average latency on a 100-query evaluation set using hybrid dense + BM25 retrieval with deterministic ranking. Production system is now used by BIS and tens of thousands of users; built and open-sourced the public release.</li>
+        <li>Solved the problem of businesses struggling to navigate huge BIS standards documents by building a natural-language RAG system that maps product descriptions and questions to the relevant IS codes. Achieved 98% Hit Rate@3, 0.939 MRR@5, and ~1.1s average latency on a 100-query evaluation set using hybrid dense + BM25 retrieval with deterministic ranking. Production system is now used by BIS and tens of thousands of users; built and open-sourced the public release.</li>
       </ul>
 
       <div class="row">
@@ -590,7 +590,7 @@
         <p class="row__date"><a href="https://github.com/isHeSatoshi/localbanana" target="_blank" rel="noopener">repo &nearr;</a></p>
       </div>
       <ul class="bullets">
-        <li>Reduced deployment from 34 GB to 16 GB and generated 512 px images in 1.45 s through DMD-based Qwen-Image-2.1 distillation, reaching Nano Banana class image generations.</li>
+        <li>Distilled a rank-128 LoRA from Qwen-Image-2.1 with distribution matching, baking a six-step schedule against the base model's dozens of Euler steps, about 5x faster; three steps match four on quality over 4 prompts and 3 seeds. Runs 512 px in 1.84 s at six steps on a 16 GB RTX 4060 Ti, about 15.1 GiB peak VRAM, int8 ConvRot weights, 16.7 GiB of local artifacts.</li>
       </ul>
     </section>
 

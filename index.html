@@ -852,7 +852,7 @@
         <div class="project-info">
           <div class="project-info__main">
             <h3 class="project-name">localbanana</h3>
-            <p class="project-type">DMD distillation of Qwen-Image-2.1. Nano Banana class image generation on a 16GB consumer card, in 1.45 s.</p>
+            <p class="project-type">DMD distillation of Qwen-Image-2.1. Few-step 512 px image generation on a 16 GB consumer card, 1.84 s at six steps.</p>
           </div>
           <ul class="project-tech">
               <li>PyTorch</li>
@@ -893,7 +893,7 @@
                 <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#15171A">TEACHER</text>
               </g>
               <text x="58" y="46" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">Qwen-Image-2.1</text>
-              <text x="58" y="108" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">34 GB</text>
+              <text x="58" y="108" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.6">base model</text>
               <line x1="88" y1="78" x2="140" y2="100" stroke="#15171A" stroke-width="0.8" marker-end="url(#lb-arr)"/>
               <!-- DMD -->
               <g transform="translate(180 100)">
@@ -907,7 +907,7 @@
                 <rect x="-30" y="-14" width="60" height="28" fill="none" stroke="#0E5E5A" stroke-width="1.4"/>
                 <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" letter-spacing="1.2" fill="#0E5E5A">STUDENT</text>
               </g>
-              <text x="302" y="130" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#0E5E5A" opacity="0.85">16 GB · 1.45 s</text>
+              <text x="302" y="130" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#0E5E5A" opacity="0.85">16 GB · 1.84 s</text>
               <!-- loss annotation -->
               <g transform="translate(180 158)">
                 <text x="0" y="0" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="0.8" fill="#15171A" opacity="0.55">match the output distribution, not the pixels</text>
@@ -915,8 +915,8 @@
             </svg>
           </div>
           <div class="project-visual__foot">
-            <span>512px · 3 steps</span>
-            <span>Nano Banana class output</span>
+            <span>512px · 6 steps</span>
+            <span>distilled from the base model</span>
           </div>
         </div>
       </article>
