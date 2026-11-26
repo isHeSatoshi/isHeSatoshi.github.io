@@ -880,3 +880,543 @@ svg [stroke="#5BAFA6"] { stroke: var(--dg-signal-2); }
   [data-reveal] { opacity: 1; transform: none; }
   body.is-loading { opacity: 1; }
 }
+
+/* ================================================================
+   18. MINIMAL HOMEPAGE (Lossfunk-clarity × paper/ink craft)
+   Scoped to body.home so droid-council.html keeps its own layout.
+   ================================================================ */
+.nav__inner--narrow {
+  max-width: 780px;
+  padding: 16px 28px;
+}
+.nav__brand {
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 500;
+  transition: color 200ms var(--ease);
+}
+.nav__brand:hover { color: var(--signal); }
+
+.home-shell {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 56px 28px 24px;
+}
+
+/* hero */
+.hero {
+  padding-bottom: 44px;
+  border-bottom: 1px solid var(--rule);
+}
+.hero__head {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 24px;
+}
+.hero__portrait {
+  margin: 0;
+  width: 96px;
+  height: 96px;
+  flex: 0 0 96px;
+  position: relative;
+  background: var(--paper-3);
+  border: 1px solid var(--rule);
+  isolation: isolate;
+  overflow: hidden;
+}
+[data-theme="ink"] .hero__portrait {
+  box-shadow: 0 0 0 1px rgba(237, 230, 215, 0.20);
+}
+.hero__title h1 {
+  font-family: var(--ff-display);
+  font-variation-settings: 'opsz' 144, 'SOFT' 30, 'WONK' 1;
+  font-size: clamp(32px, 5vw, 46px);
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+.hero__sub {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin: 0;
+}
+.hero__lede {
+  font-size: 17.5px;
+  line-height: 1.62;
+  color: var(--ink);
+  margin: 0 0 14px;
+  max-width: 62ch;
+}
+.hero__body {
+  font-size: 15.5px;
+  line-height: 1.66;
+  color: var(--ink-2);
+  margin: 0 0 22px;
+  max-width: 64ch;
+}
+.hero__body strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.hero__body a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule-strong);
+  padding-bottom: 1px;
+  transition: color 180ms var(--ease), border-color 180ms var(--ease);
+}
+.hero__body a:hover {
+  color: var(--signal);
+  border-bottom-color: var(--signal);
+}
+.hero__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+}
+.hero__links a {
+  font-family: var(--ff-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  color: var(--signal);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 180ms var(--ease), opacity 180ms var(--ease);
+}
+.hero__links a:hover {
+  border-bottom-color: var(--signal);
+}
+
+/* content blocks */
+.block {
+  padding: 44px 0 8px;
+}
+.block__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.block__head h2 {
+  font-family: var(--ff-display);
+  font-variation-settings: 'opsz' 144, 'SOFT' 30, 'WONK' 1;
+  font-size: clamp(24px, 3.2vw, 30px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0;
+}
+.block__meta {
+  font-family: var(--ff-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+/* selected work list */
+.work-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.work-item {
+  padding: 22px 0;
+  border-top: 1px solid var(--rule);
+  transition: border-color 220ms var(--ease);
+}
+.work-item:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+.work-item__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.work-item__heading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+}
+.work-item__heading h3 {
+  font-family: var(--ff-display);
+  font-variation-settings: 'opsz' 72, 'SOFT' 20, 'WONK' 1;
+  font-size: 21px;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0;
+}
+.work-item__heading h3 a {
+  transition: color 180ms var(--ease);
+}
+.work-item__heading h3 a:hover {
+  color: var(--signal);
+}
+.work-item__tag {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.work-item__link {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--signal);
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 180ms var(--ease);
+}
+.work-item__link:hover {
+  border-bottom-color: var(--signal);
+}
+.work-item__desc {
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--ink-2);
+  margin: 0 0 8px;
+  max-width: 65ch;
+}
+.work-item__stat {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--ink-mute);
+  margin: 0;
+}
+
+.archive-note {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-3);
+  margin: 20px 0 0;
+}
+.archive-note a {
+  color: var(--signal);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 180ms var(--ease);
+}
+.archive-note a:hover {
+  border-bottom-color: var(--signal);
+}
+
+/* writing / notes */
+.notes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.note-item {
+  border-top: 1px solid var(--rule);
+}
+.note-item:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+.note-item a {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 0;
+  transition: color 180ms var(--ease);
+}
+.note-item__title {
+  font-family: var(--ff-display);
+  font-variation-settings: 'opsz' 60, 'SOFT' 20, 'WONK' 0;
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--ink);
+  transition: color 180ms var(--ease);
+}
+.note-item a:hover .note-item__title {
+  color: var(--signal);
+}
+.note-item__desc {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-3);
+  max-width: 64ch;
+}
+
+/* minimal footer */
+.home-footer {
+  max-width: 780px;
+  margin: 40px auto 0;
+  padding: 0 28px 56px;
+}
+.home-footer__inner {
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.home-footer__line {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin: 0;
+}
+.home-footer__line a {
+  color: var(--signal);
+  border-bottom: 1px solid var(--rule-strong);
+  padding-bottom: 1px;
+  transition: border-color 180ms var(--ease);
+}
+.home-footer__line a:hover {
+  border-bottom-color: var(--signal);
+}
+.home-footer__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  font-family: var(--ff-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.home-footer__meta nav {
+  display: flex;
+  gap: 18px;
+}
+.home-footer__meta a {
+  color: var(--ink-3);
+  transition: color 180ms var(--ease);
+}
+.home-footer__meta a:hover {
+  color: var(--signal);
+}
+
+@media (max-width: 600px) {
+  .nav__inner--narrow { padding: 12px 16px; gap: 10px; }
+  .nav__brand { font-size: 10.5px; letter-spacing: 0.08em; }
+  .home .nav__links { gap: 12px; font-size: 10px; letter-spacing: 0.12em; }
+  .home .nav__theme { padding: 5px 8px; font-size: 10px; letter-spacing: 0.12em; }
+  .home-shell { padding: 36px 18px 16px; }
+  .home-footer { padding: 0 18px 44px; }
+  .hero__head { gap: 16px; }
+  .hero__portrait { width: 76px; height: 76px; flex-basis: 76px; }
+  .hero__lede { font-size: 16.5px; }
+  .work-item__top { flex-direction: column; gap: 6px; }
+}
+
+/* ================================================================
+   19. SCROLL-REACTIVE PORTRAIT COMPANION & MARGIN RAIL
+   Quiet notebook-margin choreography: steps out of its blueprint
+   slot into the empty left margin on desktop (>= 1120px), scrubs
+   the 8s story as you scroll, and holds still when you read.
+   ================================================================ */
+.nav { position: sticky; top: 0; }
+.nav__progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1.5px;
+  background: var(--signal);
+  opacity: 0;
+  transform-origin: left center;
+  transform: scaleX(var(--scroll-p, 0));
+  pointer-events: none;
+  transition: opacity 280ms var(--ease);
+}
+body.is-scrolling-past-top .nav__progress { opacity: 0.7; }
+
+.hero__portrait {
+  transition: border-color 360ms var(--ease), background-color 360ms var(--ease);
+}
+.hero__portrait .scene-svg {
+  display: block;
+  transition: opacity 420ms var(--ease);
+}
+[data-theme="ink"] .hero__portrait .scene-svg {
+  filter: invert(0.92) hue-rotate(180deg);
+}
+
+.portrait-stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #F8F3E6;
+  cursor: pointer;
+  outline: none;
+}
+.portrait-stage:focus-visible {
+  outline: 1.5px solid var(--signal);
+  outline-offset: 4px;
+}
+.portrait-stage .identity__film {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 700ms var(--ease);
+}
+
+.portrait-stage__aura {
+  position: absolute;
+  inset: -12px;
+  background: radial-gradient(circle, rgba(14, 94, 90, 0.16) 0%, rgba(14, 94, 90, 0) 70%);
+  opacity: 0;
+  transform: scale(0.92);
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 320ms var(--ease), transform 400ms var(--ease);
+}
+[data-theme="ink"] .portrait-stage__aura {
+  background: radial-gradient(circle, rgba(74, 184, 178, 0.24) 0%, rgba(74, 184, 178, 0) 70%);
+}
+.portrait-stage.is-curious .portrait-stage__aura,
+.portrait-stage:hover .portrait-stage__aura {
+  opacity: 1;
+  transform: scale(1);
+}
+.portrait-stage.is-pulsing .portrait-stage__aura {
+  opacity: 1;
+  transform: scale(1.18);
+}
+
+.portrait-stage__caption {
+  display: none;
+}
+
+.margin-rail {
+  display: none;
+}
+
+/* Desktop companion mode (>= 1120px, motion allowed) */
+body.has-companion .hero__portrait {
+  isolation: auto;
+  overflow: visible;
+}
+body.has-companion.has-film-ready .hero__portrait:not(.is-departed) .scene-svg {
+  opacity: 0;
+}
+body.has-companion .hero__portrait.is-departed {
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--rule-strong);
+  box-shadow: none;
+}
+body.has-companion .hero__portrait.is-departed .scene-svg {
+  opacity: 0.28;
+}
+
+body.has-companion .portrait-stage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 96px;
+  height: 96px;
+  z-index: 35;
+  transform-origin: center center;
+  will-change: transform;
+  border: 1px solid var(--rule);
+  transition: box-shadow 320ms var(--ease), border-color 280ms var(--ease);
+}
+html[data-theme="ink"] body.has-companion .portrait-stage {
+  border-color: rgba(237, 230, 215, 0.24);
+}
+body.has-companion .portrait-stage.is-floating {
+  box-shadow: 0 4px 16px rgba(21, 23, 26, 0.08);
+}
+html[data-theme="ink"] body.has-companion .portrait-stage.is-floating {
+  box-shadow: 0 0 0 1px rgba(237, 230, 215, 0.18), 0 8px 24px rgba(0, 0, 0, 0.42);
+}
+body.has-companion .portrait-stage.is-floating:hover,
+body.has-companion .portrait-stage.is-curious {
+  border-color: var(--signal);
+}
+
+body.has-companion .portrait-stage__caption {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 7px);
+  transform: translateX(-50%);
+  width: 132px;
+  text-align: center;
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  line-height: 1.35;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms var(--ease), color 200ms var(--ease);
+}
+body.has-companion .portrait-stage.is-floating .portrait-stage__caption {
+  opacity: 0.85;
+}
+body.has-companion .portrait-stage.is-floating:hover .portrait-stage__caption {
+  opacity: 1;
+  color: var(--signal);
+}
+
+body.has-companion .margin-rail {
+  display: block;
+  position: fixed;
+  top: 112px;
+  bottom: 92px;
+  width: 1px;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 420ms var(--ease);
+}
+body.has-companion .margin-rail.is-visible {
+  opacity: 0.6;
+}
+.margin-rail__track {
+  position: absolute;
+  inset: 0;
+  background: var(--rule);
+}
+.margin-rail__fill {
+  position: absolute;
+  inset: 0;
+  background: var(--signal);
+  transform-origin: top center;
+  transform: scaleY(var(--scroll-p, 0));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__progress,
+  .margin-rail { display: none !important; }
+  .portrait-stage { position: absolute !important; inset: 0 !important; transform: none !important; }
+}
+
